@@ -1,2 +1,4 @@
 .DS_Store
 Thumbs.db
+commerce-copilot/node_modules
+commerce-copilot/.env

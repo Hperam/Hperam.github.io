@@ -15,6 +15,10 @@ Recruiter-facing portfolio repo for my software engineering work.
 - `ScenarioOps AI`: simulation and planning workspace with explainable operational recommendations
 - `Multimodal Commerce Copilot`: product discovery assistant using text, voice, and image inputs
 
+## Shipped app in this repo
+
+- `commerce-copilot/`: a real full-stack implementation of Multimodal Commerce Copilot with Node.js, Express, browser voice input, image upload, catalog grounding, and OpenAI-powered structured recommendations
+
 ## Tech
 
 - HTML
@@ -30,6 +34,7 @@ Recruiter-facing portfolio repo for my software engineering work.
 - `script.js`: reveal animation and footer year logic
 - `projects/`: detailed project brief pages
 - `assets/Harshith-Sai-Peram-Resume.pdf`: downloadable resume
+- `commerce-copilot/`: working multimodal commerce app source code
 - `.github/workflows/deploy-pages.yml`: automatic GitHub Pages deployment
 
 ## Local preview

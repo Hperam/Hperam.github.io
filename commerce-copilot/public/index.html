@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commerce Copilot</title>
+    <meta
+      name="description"
+      content="Multimodal commerce assistant with text, voice, and image input plus grounded product recommendations."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark">CC</div>
+          <div>
+            <p class="eyebrow">Multimodal Product</p>
+            <h1>Commerce Copilot</h1>
+          </div>
+        </div>
+        <a class="text-link" href="https://github.com/Hperam/Hperam.github.io" target="_blank" rel="noreferrer">
+          View portfolio repo
+        </a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Grounded shopping assistant</p>
+            <h2>
+              Ask with text. Talk with voice.
+              <span>Upload an image for style-aware recommendations.</span>
+            </h2>
+            <p class="hero-text">
+              Commerce Copilot blends local catalog retrieval with OpenAI-powered
+              reasoning so the recommendations stay grounded in real product
+              metadata instead of vague chatbot guesses.
+            </p>
+            <div class="hero-actions">
+              <button class="pill-button" data-sample="I need premium noise-canceling headphones for long flights under $400.">
+                Try travel audio
+              </button>
+              <button class="pill-button" data-sample="Find a laptop for coding and video editing with strong battery life under $1800.">
+                Try creator laptop
+              </button>
+              <button class="pill-button" data-sample="Recommend a desk setup for software engineering and multitasking.">
+                Try desk setup
+              </button>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="status-card">
+              <p class="eyebrow">System status</p>
+              <div id="healthBanner" class="health-banner">
+                Loading environment status...
+              </div>
+              <ul class="status-list">
+                <li>Catalog-grounded candidate ranking</li>
+                <li>Structured AI recommendations</li>
+                <li>Voice input in supported browsers</li>
+                <li>Optional image-aware product matching</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="workspace">
+          <section class="composer card">
+            <div class="card-header">
+              <div>
+                <p class="eyebrow">Ask for anything</p>
+                <h3>Shopping request</h3>
+              </div>
+              <button id="voiceButton" class="secondary-button" type="button">
+                Start voice input
+              </button>
+            </div>
+
+            <form id="recommendationForm" class="composer-form">
+              <label class="label" for="queryInput">Describe what you want</label>
+              <textarea
+                id="queryInput"
+                name="query"
+                rows="5"
+                placeholder="Example: I want a compact camera or phone with great travel photography, strong battery life, and premium design."
+                required
+              ></textarea>
+
+              <div class="form-grid">
+                <div>
+                  <label class="label" for="budgetInput">Budget cap</label>
+                  <select id="budgetInput" name="budgetMax">
+                    <option value="">No budget cap</option>
+                    <option value="200">Under $200</option>
+                    <option value="400">Under $400</option>
+                    <option value="800">Under $800</option>
+                    <option value="1200">Under $1200</option>
+                    <option value="1800">Under $1800</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="label" for="imageInput">Reference image</label>
+                  <input id="imageInput" name="image" type="file" accept="image/*" />
+                </div>
+              </div>
+
+              <div>
+                <p class="label">Preferred categories</p>
+                <div id="categoryChips" class="chip-group"></div>
+              </div>
+
+              <div id="imagePreview" class="image-preview hidden">
+                <img id="previewImage" alt="Uploaded preview" />
+                <div class="preview-copy">
+                  <strong id="previewName"></strong>
+                  <button id="clearImageButton" class="ghost-button" type="button">
+                    Remove image
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button id="submitButton" class="primary-button" type="submit">
+                  Get recommendations
+                </button>
+                <p class="form-note">
+                  Voice uses the browser speech API when available. Image-aware
+                  AI reasoning turns on automatically when `OPENAI_API_KEY` is configured.
+                </p>
+              </div>
+            </form>
+          </section>
+
+          <section class="results-column">
+            <section id="resultsCard" class="card results-card">
+              <div class="card-header">
+                <div>
+                  <p class="eyebrow">Recommendations</p>
+                  <h3>Your next shortlist</h3>
+                </div>
+                <button id="copySummaryButton" class="secondary-button" type="button" disabled>
+                  Copy summary
+                </button>
+              </div>
+              <div id="resultsState" class="empty-state">
+                Run a query to see grounded recommendations, tradeoffs, and a
+                shareable summary card.
+              </div>
+              <div id="resultsContent" class="results-content hidden"></div>
+            </section>
+          </section>
+        </section>
+
+        <section class="catalog-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Grounding catalog</p>
+              <h3>Products available to the copilot</h3>
+            </div>
+          </div>
+          <div id="catalogGrid" class="catalog-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
