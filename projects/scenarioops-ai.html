@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScenarioOps AI | Harshith Sai Peram</title>
+    <meta
+      name="description"
+      content="Project brief for ScenarioOps AI, an operations simulation and planning workspace."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project-page">
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">HSP</span>
+          <span class="brand-text">Harshith Sai Peram</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <div class="container">
+        <a class="back-link" href="../index.html#projects">Back to portfolio</a>
+
+        <section class="project-hero" data-reveal>
+          <p class="detail-kicker">Project brief + implementation plan</p>
+          <h1>ScenarioOps AI</h1>
+          <p class="project-subtitle">
+            A planning workspace that combines simulation inputs, forecast
+            outputs, and an AI copilot to help operators run what-if scenarios,
+            compare tradeoffs, and understand why a recommendation changed week
+            over week.
+          </p>
+          <div class="project-meta">
+            <span>Why now: teams want AI that helps decisions, not just chat</span>
+            <span>Best signal: data engineering + systems + product sense</span>
+            <span>Status: architecture scoped for public build</span>
+          </div>
+        </section>
+
+        <section class="detail-grid">
+          <div>
+            <article class="detail-card" data-reveal>
+              <h2>What this project proves</h2>
+              <ul class="detail-list">
+                <li>You can translate operational complexity into reliable software abstractions.</li>
+                <li>You know how to build trustworthy data pipelines and evaluation loops around decision systems.</li>
+                <li>You can turn simulation outputs into an interface leaders can actually use.</li>
+              </ul>
+            </article>
+
+            <article class="detail-card" data-reveal>
+              <h2>Core experience</h2>
+              <p>
+                Users load historical demand, labor capacity, and service-level
+                assumptions into a planning dashboard. They can adjust
+                constraints, run scenarios, compare outputs, and ask the copilot
+                why a projected bottleneck moved or which assumptions most
+                changed the outcome.
+              </p>
+            </article>
+
+            <article class="detail-card" data-reveal>
+              <h2>Architecture outline</h2>
+              <ul class="detail-list">
+                <li>Ingestion pipelines for simulation inputs with schema checks, deduplication, anomaly detection, and versioning.</li>
+                <li>Scenario engine that stores parameter sets and reproducible run history for side-by-side comparison.</li>
+                <li>Forecast evaluation layer tracking accuracy over time with MAPE, WAPE, and interval quality metrics.</li>
+                <li>Copilot layer that explains output shifts using retrieved run metadata, assumptions, and comparable historical scenarios.</li>
+                <li>Dashboard UI that surfaces variance, bottlenecks, and cost or staffing tradeoffs clearly.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div>
+            <article class="stack-card" data-reveal>
+              <h3>Suggested stack</h3>
+              <ul class="stack-list">
+                <li>Frontend: React or Next.js with charting</li>
+                <li>Data layer: Python, Pandas, PySpark</li>
+                <li>Backend: FastAPI or Java Spring Boot</li>
+                <li>Infra: S3, Athena, ECS, Step Functions</li>
+                <li>AI: OpenAI, retrieval over run history, evals</li>
+              </ul>
+            </article>
+
+            <article class="stack-card" data-reveal>
+              <h3>Hiring-team signal</h3>
+              <p>
+                This is the strongest bridge between your Amazon background and
+                a modern AI portfolio because it showcases decision systems, data
+                quality, experimentation, and scalable backend design.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="phase-grid">
+            <article class="phase-card" data-reveal>
+              <h3>Phase 1</h3>
+              <p>Ship dataset ingestion, run versioning, and a first scenario comparison dashboard.</p>
+            </article>
+            <article class="phase-card" data-reveal>
+              <h3>Phase 2</h3>
+              <p>Add evaluation metrics, forecast drift tracking, and richer scenario metadata.</p>
+            </article>
+            <article class="phase-card" data-reveal>
+              <h3>Phase 3</h3>
+              <p>Add copilot explanations, assumption sensitivity summaries, and natural-language scenario creation.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
