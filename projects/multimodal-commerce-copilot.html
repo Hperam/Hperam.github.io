@@ -26,7 +26,7 @@
         <a class="back-link" href="../index.html#projects">Back to portfolio</a>
 
         <section class="project-hero" data-reveal>
-          <p class="detail-kicker">Project brief + implementation plan</p>
+          <p class="detail-kicker">Shipped project + source code</p>
           <h1>Multimodal Commerce Copilot</h1>
           <p class="project-subtitle">
             A product discovery assistant that accepts screenshots, product
@@ -37,7 +37,7 @@
           <div class="project-meta">
             <span>Why now: multimodal interfaces are finally expected</span>
             <span>Best signal: polished UX + full-stack AI product execution</span>
-            <span>Status: architecture scoped for public build</span>
+            <span>Status: source code now included in repo</span>
           </div>
         </section>
 
@@ -64,6 +64,17 @@
             </article>
 
             <article class="detail-card" data-reveal>
+              <h2>What is implemented</h2>
+              <ul class="detail-list">
+                <li>Standalone Node and Express app with a polished browser UI.</li>
+                <li>Typed shopping requests, optional browser voice capture, and optional image upload.</li>
+                <li>Catalog-grounded retrieval before model reasoning so recommendations stay anchored to real products.</li>
+                <li>Structured recommendation output with reasons, tradeoffs, follow-up prompts, and a share card.</li>
+                <li>Fallback mode when no OpenAI API key is configured, so the project still runs locally out of the box.</li>
+              </ul>
+            </article>
+
+            <article class="detail-card" data-reveal>
               <h2>Architecture outline</h2>
               <ul class="detail-list">
                 <li>Catalog ingestion pipeline that normalizes product specs, reviews, pricing, and image embeddings.</li>
@@ -77,22 +88,28 @@
 
           <div>
             <article class="stack-card" data-reveal>
-              <h3>Suggested stack</h3>
+              <h3>Actual stack</h3>
               <ul class="stack-list">
-                <li>Frontend: Next.js, TypeScript, Framer Motion</li>
-                <li>Backend: Node.js or Python API layer</li>
-                <li>AI: OpenAI vision and speech models, embeddings</li>
-                <li>Data: Postgres, vector store, object storage</li>
-                <li>Infra: Vercel or AWS, analytics, caching</li>
+                <li>Frontend: vanilla HTML, CSS, and JavaScript</li>
+                <li>Backend: Node.js and Express</li>
+                <li>AI: OpenAI Responses API with structured outputs and image input</li>
+                <li>Data: local curated catalog with retrieval ranking</li>
+                <li>Developer setup: npm, dotenv, local runtime docs</li>
               </ul>
             </article>
 
             <article class="stack-card" data-reveal>
-              <h3>Hiring-team signal</h3>
+              <h3>Code access</h3>
               <p>
-                This is especially useful if you want to look strong for
-                full-stack, product engineering, or AI feature teams because it
-                shows taste, UI judgment, and real-world system integration.
+                Source code lives in the same repository as this portfolio:
+                <a
+                  class="text-link"
+                  href="https://github.com/Hperam/Hperam.github.io/tree/main/commerce-copilot"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  open the Commerce Copilot app
+                </a>.
               </p>
             </article>
           </div>

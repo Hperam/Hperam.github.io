@@ -1,0 +1,16 @@
+{
+  "name": "commerce-copilot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A multimodal commerce assistant that grounds recommendations in a curated product catalog.",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "openai": "^6.33.0"
+  }
+}

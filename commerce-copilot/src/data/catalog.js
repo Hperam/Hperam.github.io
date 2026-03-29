@@ -1,0 +1,297 @@
+const catalog = [
+  {
+    id: "aero-pro-14",
+    name: "Aero Pro 14",
+    brand: "Northstar",
+    category: "Laptop",
+    price: 1599,
+    rating: 4.7,
+    summary:
+      "A lightweight creator laptop with strong battery life, an OLED display, and enough GPU power for editing and everyday AI workflows.",
+    highlights: [
+      "14-inch OLED display",
+      "18-hour battery life",
+      "32 GB memory",
+      "RTX-class mobile graphics"
+    ],
+    tags: [
+      "portable",
+      "creator",
+      "video editing",
+      "battery life",
+      "premium",
+      "college",
+      "travel"
+    ],
+    useCases: [
+      "content creation",
+      "remote work",
+      "coding",
+      "light gaming"
+    ]
+  },
+  {
+    id: "vertex-ultra",
+    name: "Vertex Ultra",
+    brand: "Vertex",
+    category: "Phone",
+    price: 1199,
+    rating: 4.8,
+    summary:
+      "A flagship phone with a class-leading camera system, fast performance, and all-day endurance for creators and power users.",
+    highlights: [
+      "50 MP triple camera",
+      "120 Hz display",
+      "all-day battery",
+      "fast on-device AI features"
+    ],
+    tags: [
+      "camera",
+      "flagship",
+      "video",
+      "travel",
+      "creator",
+      "premium"
+    ],
+    useCases: [
+      "mobile photography",
+      "video capture",
+      "productivity",
+      "social media"
+    ]
+  },
+  {
+    id: "echo-buds-max",
+    name: "Echo Buds Max",
+    brand: "Echo",
+    category: "Audio",
+    price: 329,
+    rating: 4.6,
+    summary:
+      "Premium over-ear headphones with detailed sound, strong ANC, and a comfort-focused design for work and travel.",
+    highlights: [
+      "adaptive noise cancellation",
+      "40-hour battery",
+      "USB-C fast charge",
+      "low-latency mode"
+    ],
+    tags: [
+      "headphones",
+      "audio",
+      "travel",
+      "noise cancellation",
+      "remote work",
+      "music"
+    ],
+    useCases: [
+      "commuting",
+      "focused work",
+      "music listening",
+      "travel"
+    ]
+  },
+  {
+    id: "pixel-desk-34",
+    name: "Pixel Desk 34",
+    brand: "Glassline",
+    category: "Monitor",
+    price: 699,
+    rating: 4.5,
+    summary:
+      "A 34-inch ultrawide monitor built for multitasking, spreadsheets, timelines, and immersive productivity setups.",
+    highlights: [
+      "34-inch ultrawide panel",
+      "USB-C hub",
+      "120 Hz refresh rate",
+      "color-accurate display"
+    ],
+    tags: [
+      "monitor",
+      "ultrawide",
+      "productivity",
+      "editing",
+      "desk setup"
+    ],
+    useCases: [
+      "multitasking",
+      "trading",
+      "video editing",
+      "software engineering"
+    ]
+  },
+  {
+    id: "nova-watch-sport",
+    name: "Nova Watch Sport",
+    brand: "Nova",
+    category: "Wearable",
+    price: 449,
+    rating: 4.4,
+    summary:
+      "A fitness-forward smartwatch with deep health tracking, offline workout support, and a bright always-on display.",
+    highlights: [
+      "GPS + LTE",
+      "recovery and sleep metrics",
+      "water resistant",
+      "5-day battery"
+    ],
+    tags: [
+      "fitness",
+      "health",
+      "watch",
+      "running",
+      "outdoors"
+    ],
+    useCases: [
+      "workouts",
+      "running",
+      "health tracking",
+      "daily wear"
+    ]
+  },
+  {
+    id: "orbit-pad-13",
+    name: "Orbit Pad 13",
+    brand: "Orbit",
+    category: "Tablet",
+    price: 899,
+    rating: 4.6,
+    summary:
+      "A versatile tablet with pen support, a high-refresh display, and strong app performance for sketching, notes, and media.",
+    highlights: [
+      "13-inch display",
+      "pen support",
+      "desktop-class chip",
+      "thin-and-light design"
+    ],
+    tags: [
+      "tablet",
+      "student",
+      "drawing",
+      "notes",
+      "media"
+    ],
+    useCases: [
+      "note taking",
+      "illustration",
+      "content consumption",
+      "travel"
+    ]
+  },
+  {
+    id: "forge-keyboard-75",
+    name: "Forge Keyboard 75",
+    brand: "Forge",
+    category: "Accessory",
+    price: 219,
+    rating: 4.7,
+    summary:
+      "A premium mechanical keyboard tuned for software engineers, writers, and creators who want comfort and fast response.",
+    highlights: [
+      "75 percent layout",
+      "hot-swappable switches",
+      "wireless + wired",
+      "aluminum frame"
+    ],
+    tags: [
+      "keyboard",
+      "desk setup",
+      "coding",
+      "mechanical",
+      "accessory"
+    ],
+    useCases: [
+      "software engineering",
+      "writing",
+      "desk setup",
+      "remote work"
+    ]
+  },
+  {
+    id: "luma-cam-air",
+    name: "Luma Cam Air",
+    brand: "Luma",
+    category: "Camera",
+    price: 999,
+    rating: 4.5,
+    summary:
+      "A compact mirrorless camera for travel creators who want great color, portable lenses, and excellent video stabilization.",
+    highlights: [
+      "4K 60fps video",
+      "compact mirrorless body",
+      "in-body stabilization",
+      "fast subject tracking"
+    ],
+    tags: [
+      "camera",
+      "creator",
+      "travel",
+      "photography",
+      "video"
+    ],
+    useCases: [
+      "vlogging",
+      "travel photography",
+      "YouTube",
+      "short-form video"
+    ]
+  },
+  {
+    id: "stride-pack-pro",
+    name: "Stride Pack Pro",
+    brand: "Stride",
+    category: "Bag",
+    price: 179,
+    rating: 4.3,
+    summary:
+      "A structured everyday backpack with laptop protection, modular storage, and a travel-friendly profile.",
+    highlights: [
+      "17-inch laptop sleeve",
+      "weather-resistant shell",
+      "modular compartments",
+      "carry-on ready"
+    ],
+    tags: [
+      "backpack",
+      "travel",
+      "everyday carry",
+      "work",
+      "gear"
+    ],
+    useCases: [
+      "commuting",
+      "travel",
+      "remote work",
+      "college"
+    ]
+  },
+  {
+    id: "pulse-speaker-mini",
+    name: "Pulse Speaker Mini",
+    brand: "Pulse",
+    category: "Audio",
+    price: 149,
+    rating: 4.2,
+    summary:
+      "A compact smart speaker with room-filling sound, Bluetooth fallback, and strong voice assistant integration.",
+    highlights: [
+      "smart voice assistant",
+      "stereo pairing",
+      "portable power dock",
+      "Bluetooth + Wi-Fi"
+    ],
+    tags: [
+      "speaker",
+      "smart home",
+      "audio",
+      "compact"
+    ],
+    useCases: [
+      "music",
+      "smart home control",
+      "small rooms",
+      "casual listening"
+    ]
+  }
+];
+
+export default catalog;
