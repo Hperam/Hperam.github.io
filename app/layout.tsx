@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 
+import { AccentThemeController } from "@/components/accent-theme-controller";
+
 import "./globals.css";
 
 const fontSans = Plus_Jakarta_Sans({
@@ -51,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" className="scroll-smooth">
       <body className={`${fontSans.variable} ${fontDisplay.variable} ${fontMono.variable}`}>
+        <AccentThemeController />
         {children}
       </body>
     </html>

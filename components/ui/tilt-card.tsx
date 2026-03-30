@@ -1,13 +1,15 @@
 "use client";
 
 import clsx from "clsx";
-import type { HTMLAttributes, ReactNode } from "react";
+import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
 import { useRef } from "react";
 
 type TiltCardProps = {
   children: ReactNode;
   className?: string;
-} & HTMLAttributes<HTMLDivElement>;
+} & Omit<HTMLMotionProps<"div">, "children" | "className">;
 
 export function TiltCard({ children, className, ...rest }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,6 +24,8 @@ export function TiltCard({ children, className, ...rest }: TiltCardProps) {
     const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
     const y = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
 
+    node.style.setProperty("--glare-x", `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    node.style.setProperty("--glare-y", `${((event.clientY - rect.top) / rect.height) * 100}%`);
     node.style.transform = `perspective(1200px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
   };
 
@@ -32,20 +36,24 @@ export function TiltCard({ children, className, ...rest }: TiltCardProps) {
 
     ref.current.style.transform =
       "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+    ref.current.style.setProperty("--glare-x", "50%");
+    ref.current.style.setProperty("--glare-y", "50%");
   };
 
   return (
-    <div
+    <motion.div
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={reset}
+      whileHover={{ y: -4, scale: 1.01 }}
       className={clsx(
-        "transition-transform duration-300 will-change-transform",
+        "tilt-card relative overflow-hidden transition-transform duration-300 will-change-transform",
         className
       )}
       {...rest}
     >
+      <span className="tilt-card-glare" />
       {children}
-    </div>
+    </motion.div>
   );
 }

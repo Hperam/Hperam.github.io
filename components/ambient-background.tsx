@@ -13,23 +13,35 @@ const particles = Array.from({ length: 18 }, (_, index) => ({
 export function AmbientBackground() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-mesh-glow opacity-80" />
+      <div
+        className="absolute inset-0 opacity-80"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at top, rgb(var(--brand) / 0.26), transparent 28%), radial-gradient(circle at 20% 20%, rgb(var(--accent) / 0.14), transparent 22%), radial-gradient(circle at 80% 10%, rgb(var(--brand) / 0.16), transparent 20%)"
+        }}
+      />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.08),_transparent_35%)]" />
       <div className="noise-mask absolute inset-0 opacity-[0.08]" />
       <motion.div
         className="absolute left-[10%] top-[12%] h-64 w-64 rounded-full bg-brand/20 blur-3xl"
-        animate={{ y: [0, -30, 10], x: [0, 35, -15] }}
+        animate={{ y: [0, -30, 10], x: [0, 35, -15], scale: [0.96, 1.08, 0.98] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute right-[8%] top-[20%] h-72 w-72 rounded-full bg-accent/20 blur-3xl"
-        animate={{ y: [0, 25, -10], x: [0, -25, 20] }}
+        animate={{ y: [0, 25, -10], x: [0, -25, 20], scale: [1, 0.94, 1.04] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute bottom-[8%] left-[40%] h-56 w-56 rounded-full bg-white/10 blur-3xl"
         animate={{ y: [0, -20, 15], scale: [1, 1.08, 0.96] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute left-[30%] top-[54%] h-80 w-80 rounded-full blur-3xl"
+        style={{ background: "rgb(var(--accent) / 0.12)" }}
+        animate={{ x: [0, 18, -10], y: [0, -12, 12], scale: [0.9, 1.05, 0.94] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       {particles.map((particle) => (
         <motion.span
