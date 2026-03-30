@@ -1,55 +1,16 @@
-# Harshith Sai Peram Portfolio
+# hperam.github.io
 
-Recruiter-facing portfolio repo for my software engineering work.
+Portfolio site for Harshith Sai Peram — Software Engineer specializing in backend systems, distributed infrastructure, and AI-powered products.
 
-## What this repo includes
+**Live site:** [hperam.github.io](https://hperam.github.io)
 
-- a polished static homepage tailored for SDE 2 applications
-- impact highlights from Amazon and Flipkart
-- three AI-forward project briefs chosen to showcase backend, systems, and product depth
-- a downloadable resume asset for fast recruiter access
+---
 
-## Featured project directions
+## About
 
-- `Runbook Agent`: incident response copilot grounded in logs, metrics, traces, and runbooks
-- `ScenarioOps AI`: simulation and planning workspace with explainable operational recommendations
-- `Multimodal Commerce Copilot`: product discovery assistant using text, voice, and image inputs
+This site covers my background, skills, work experience at Amazon and Flipkart, and personal projects including an incident response AI copilot, a supply chain simulation workspace, and a multimodal commerce search engine.
 
-## Shipped app in this repo
+## Built With
 
-- `commerce-copilot/`: a real full-stack implementation of Multimodal Commerce Copilot with Node.js, Express, browser voice input, image upload, catalog grounding, and OpenAI-powered structured recommendations
-
-## Tech
-
-- HTML
-- CSS
-- vanilla JavaScript
-- GitHub Pages
-- GitHub Actions
-
-## Repo structure
-
-- `index.html`: portfolio homepage
-- `styles.css`: shared design system and responsive layout
-- `script.js`: reveal animation and footer year logic
-- `projects/`: detailed project brief pages
-- `assets/Harshith-Sai-Peram-Resume.pdf`: downloadable resume
-- `commerce-copilot/`: working multimodal commerce app source code
-- `.github/workflows/deploy-pages.yml`: automatic GitHub Pages deployment
-
-## Local preview
-
-Open `index.html` directly in a browser, or run:
-
-```bash
-python3 -m http.server 4173
-```
-
-Then visit `http://localhost:4173`.
-
-## Next upgrades
-
-1. Replace each project brief with a live repo and demo.
-2. Add screenshots, demo GIFs, or short walkthrough videos.
-3. Link this site from the GitHub profile README and pin the strongest repos.
-4. Add real project metrics and architecture diagrams as the builds become production-ready.
+- HTML, CSS, JavaScript
+- Deployed via GitHub Pages
