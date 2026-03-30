@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
     <title>Commerce Copilot</title>
     <meta
       name="description"
       content="Multimodal commerce assistant with text, voice, and image input plus grounded product recommendations."
     />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="page-shell">
@@ -20,8 +21,13 @@
             <h1>Commerce Copilot</h1>
           </div>
         </div>
-        <a class="text-link" href="https://github.com/Hperam/Hperam.github.io" target="_blank" rel="noreferrer">
-          View portfolio repo
+        <a
+          class="text-link"
+          href="https://hperam.github.io"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Back to portfolio
         </a>
       </header>
 
@@ -35,32 +41,67 @@
             </h2>
             <p class="hero-text">
               Commerce Copilot blends local catalog retrieval with OpenAI-powered
-              reasoning so the recommendations stay grounded in real product
+              reasoning so recommendations stay grounded in real product
               metadata instead of vague chatbot guesses.
             </p>
             <div class="hero-actions">
-              <button class="pill-button" data-sample="I need premium noise-canceling headphones for long flights under $400.">
+              <button
+                class="pill-button"
+                data-sample="I need premium noise-canceling headphones for long flights under $400."
+              >
                 Try travel audio
               </button>
-              <button class="pill-button" data-sample="Find a laptop for coding and video editing with strong battery life under $1800.">
+              <button
+                class="pill-button"
+                data-sample="Find a laptop for coding and video editing with strong battery life under $1800."
+              >
                 Try creator laptop
               </button>
-              <button class="pill-button" data-sample="Recommend a desk setup for software engineering and multitasking.">
+              <button
+                class="pill-button"
+                data-sample="Recommend a desk setup for software engineering and multitasking."
+              >
                 Try desk setup
               </button>
             </div>
           </div>
+
           <div class="hero-panel">
             <div class="status-card">
-              <p class="eyebrow">System status</p>
+              <p class="eyebrow">Session security</p>
               <div id="healthBanner" class="health-banner">
-                Loading environment status...
+                Loading session state...
               </div>
+
+              <div class="api-key-panel">
+                <label class="label" for="apiKeyInput">OpenAI API key for this tab only</label>
+                <input
+                  id="apiKeyInput"
+                  class="api-key-input"
+                  type="password"
+                  placeholder="Paste sk-... key"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                />
+                <div class="api-key-actions">
+                  <button id="saveKeyButton" class="primary-button" type="button">
+                    Use key in this tab
+                  </button>
+                  <button id="clearKeyButton" class="secondary-button" type="button">
+                    Forget key
+                  </button>
+                </div>
+                <p id="sessionKeyStatus" class="security-note">
+                  No key loaded for this tab yet.
+                </p>
+              </div>
+
               <ul class="status-list">
-                <li>Catalog-grounded candidate ranking</li>
-                <li>Structured AI recommendations</li>
-                <li>Voice input in supported browsers</li>
-                <li>Optional image-aware product matching</li>
+                <li>Key stored only in session storage for the current tab session</li>
+                <li>Key is never committed, logged, or sent to your portfolio host</li>
+                <li>Requests go directly to OpenAI over HTTPS only when you click Generate</li>
+                <li>Without a key, the app falls back to catalog-grounded local mode</li>
               </ul>
             </div>
           </div>
@@ -126,8 +167,8 @@
                   Get recommendations
                 </button>
                 <p class="form-note">
-                  Voice uses the browser speech API when available. Image-aware
-                  AI reasoning turns on automatically when `OPENAI_API_KEY` is configured.
+                  AI mode is opt-in per tab. If you do not load a key, the app
+                  still runs in a fully local catalog-grounded mode.
                 </p>
               </div>
             </form>
@@ -140,7 +181,12 @@
                   <p class="eyebrow">Recommendations</p>
                   <h3>Your next shortlist</h3>
                 </div>
-                <button id="copySummaryButton" class="secondary-button" type="button" disabled>
+                <button
+                  id="copySummaryButton"
+                  class="secondary-button"
+                  type="button"
+                  disabled
+                >
                   Copy summary
                 </button>
               </div>
@@ -165,6 +211,6 @@
       </main>
     </div>
 
-    <script src="/app.js" type="module"></script>
+    <script src="./app.js" type="module"></script>
   </body>
 </html>

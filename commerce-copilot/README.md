@@ -6,6 +6,11 @@ Commerce Copilot is a multimodal shopping assistant built to showcase:
 - text, voice, and image-driven discovery flows
 - a clean full-stack architecture that is realistic for AI product teams
 
+## Live demo
+
+- Portfolio entry: `https://hperam.github.io/#projects`
+- Live app: `https://hperam.github.io/commerce-copilot/`
+
 ## What it does
 
 - accepts typed shopping requests
@@ -60,6 +65,8 @@ http://localhost:3000
 - If `OPENAI_API_KEY` is not set, the app still works in a catalog-grounded fallback mode.
 - Voice input depends on browser support for the Web Speech API.
 - The image is kept in browser memory and sent only with the current recommendation request.
+- In the live app, the API key is stored only in browser `sessionStorage`, not `localStorage`, and is forgotten when the tab session ends or when the user clicks `Forget key`.
+- The static GitHub Pages build serves the browser-based demo only; the local Node server is for development and fallback API-mode work.
 
 ## Why this project is strong for recruiters
 

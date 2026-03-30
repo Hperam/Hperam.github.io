@@ -162,7 +162,8 @@ a {
 .pill-button,
 .primary-button,
 .secondary-button,
-.ghost-button {
+.ghost-button,
+.api-key-input {
   min-height: 42px;
   padding: 0.7rem 1rem;
   border-radius: 999px;
@@ -205,6 +206,34 @@ a {
 
 .status-card {
   height: 100%;
+}
+
+.api-key-panel {
+  margin: 1rem 0 1.2rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.api-key-input {
+  width: 100%;
+  margin-top: 0.25rem;
+  background: var(--panel-soft);
+  color: var(--text);
+}
+
+.api-key-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+.security-note {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .health-banner {
@@ -522,7 +551,8 @@ textarea {
   }
 
   .hero-actions,
-  .chip-group {
+  .chip-group,
+  .api-key-actions {
     flex-direction: column;
   }
 }
