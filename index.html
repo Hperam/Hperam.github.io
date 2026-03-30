@@ -10,9 +10,6 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/og-preview.svg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Harshith Sai Peram — Software Engineer" />
-    <meta name="twitter:description" content="Ex-Amazon engineer building scalable backend systems and AI-powered products." />
-    <meta name="twitter:image" content="assets/og-preview.svg" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,16 +18,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+
     <div id="scroll-bar"></div>
 
+    <!-- ─── HEADER ───────────────────────────────────────────────────── -->
     <header class="site-header" id="site-header">
       <div class="container nav-row">
         <a class="brand" href="#top" aria-label="Home">
           <span class="brand-mark">HSP</span>
-          <span class="brand-name">Harshith Sai Peram</span>
         </a>
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#stack">Stack</a>
+          <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
@@ -41,11 +39,11 @@
 
     <main id="top">
 
-      <!-- ─── HERO ─────────────────────────────────────────────────────── -->
+      <!-- ─── HERO ──────────────────────────────────────────────────── -->
       <section class="hero">
-        <div class="hero-glow g1"></div>
-        <div class="hero-glow g2"></div>
-        <div class="hero-glow g3"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
         <div class="container hero-inner">
 
           <div class="available-badge" data-reveal data-delay="0">
@@ -53,24 +51,25 @@
             Available for SDE 2 &amp; Senior SDE roles
           </div>
 
-          <h1 class="hero-name" data-reveal data-delay="80">
-            Harshith Sai<br /><span class="gradient-text">Peram.</span>
+          <h1 class="hero-name" data-reveal data-delay="100">
+            Harshith Sai<br />
+            <span class="grad-text">Peram.</span>
           </h1>
 
-          <p class="hero-role" data-reveal data-delay="160">
-            Backend &amp; AI Systems Engineer
-            <span class="role-tag">Ex-Amazon</span>
+          <p class="hero-role" data-reveal data-delay="200">
+            <span class="role-prefix">I build </span><span id="typed-role"></span><span class="cursor-blink">|</span>
+            <span class="ex-tag">Ex-Amazon</span>
           </p>
 
-          <p class="hero-bio" data-reveal data-delay="240">
-            I build scalable backend systems, distributed data pipelines, and AI-powered products
-            that work at scale. At Amazon, I worked on fulfillment simulation and demand forecasting
-            infrastructure — systems influencing billions of dollars in inventory decisions.
+          <p class="hero-bio" data-reveal data-delay="300">
+            Scalable backend systems, distributed data pipelines, and AI-powered products
+            that work at scale. At Amazon I worked on fulfillment simulation and demand
+            forecasting infrastructure influencing billions of dollars in inventory decisions.
           </p>
 
-          <div class="hero-actions" data-reveal data-delay="320">
-            <a class="btn btn-primary" href="assets/Harshith-Sai-Peram-Resume.pdf" target="_blank" rel="noreferrer">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <div class="hero-actions" data-reveal data-delay="400">
+            <a class="btn btn-primary magnetic" href="assets/Harshith-Sai-Peram-Resume.pdf" target="_blank" rel="noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Resume
             </a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -78,105 +77,128 @@
             <a class="btn btn-outline" href="mailto:harshithsai98@gmail.com">Email me</a>
           </div>
 
-          <div class="hero-stats" data-reveal data-delay="400">
+          <div class="hero-stats" data-reveal data-delay="500">
             <div class="stat">
-              <span class="stat-num">$2M</span>
-              <span class="stat-desc">annual savings unlocked</span>
+              <span class="stat-num" data-count="2" data-prefix="$" data-suffix="M">$2M</span>
+              <span class="stat-label">annual savings unlocked</span>
             </div>
-            <div class="stat-divider"></div>
+            <div class="stat-sep"></div>
             <div class="stat">
               <span class="stat-num">&lt;0.1%</span>
-              <span class="stat-desc">production fallback rate</span>
+              <span class="stat-label">production fallback rate</span>
             </div>
-            <div class="stat-divider"></div>
+            <div class="stat-sep"></div>
             <div class="stat">
-              <span class="stat-num">16 wks</span>
-              <span class="stat-desc">forecast horizons supported</span>
+              <span class="stat-num" data-count="16" data-suffix=" wks">16 wks</span>
+              <span class="stat-label">forecast horizons</span>
             </div>
-            <div class="stat-divider"></div>
+            <div class="stat-sep"></div>
             <div class="stat">
               <span class="stat-num">2 unicorns</span>
-              <span class="stat-desc">Amazon &amp; Flipkart</span>
+              <span class="stat-label">Amazon &amp; Flipkart</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── GRADIENT DIVIDER ──────────────────────────────────────── -->
+      <div class="section-div"></div>
+
+      <!-- ─── SKILLS ────────────────────────────────────────────────── -->
+      <section class="section" id="skills">
+        <div class="container">
+          <p class="eyebrow" data-reveal>Tech Stack</p>
+          <h2 class="sec-title" data-reveal data-delay="60">Tools I work with every day.</h2>
+        </div>
+
+        <div class="marquee-zone" data-reveal data-delay="120">
+          <!-- Row 1: left → right -->
+          <div class="marquee-row">
+            <div class="marquee-track">
+              <span class="skill-chip sc-amber">Java</span>
+              <span class="skill-chip sc-blue">Python</span>
+              <span class="skill-chip sc-sky">TypeScript</span>
+              <span class="skill-chip sc-orange">AWS</span>
+              <span class="skill-chip sc-red">Apache Spark</span>
+              <span class="skill-chip sc-cyan">Docker</span>
+              <span class="skill-chip sc-violet">Terraform</span>
+              <span class="skill-chip sc-green">MongoDB</span>
+              <span class="skill-chip sc-teal">OpenAI</span>
+              <span class="skill-chip sc-indigo">FastAPI</span>
+              <!-- duplicate for seamless loop -->
+              <span class="skill-chip sc-amber">Java</span>
+              <span class="skill-chip sc-blue">Python</span>
+              <span class="skill-chip sc-sky">TypeScript</span>
+              <span class="skill-chip sc-orange">AWS</span>
+              <span class="skill-chip sc-red">Apache Spark</span>
+              <span class="skill-chip sc-cyan">Docker</span>
+              <span class="skill-chip sc-violet">Terraform</span>
+              <span class="skill-chip sc-green">MongoDB</span>
+              <span class="skill-chip sc-teal">OpenAI</span>
+              <span class="skill-chip sc-indigo">FastAPI</span>
+            </div>
+          </div>
+          <!-- Row 2: right → left -->
+          <div class="marquee-row">
+            <div class="marquee-track marquee-reverse">
+              <span class="skill-chip sc-emerald">RAG / Embeddings</span>
+              <span class="skill-chip sc-purple">Vision APIs</span>
+              <span class="skill-chip sc-sky">React</span>
+              <span class="skill-chip sc-green">Node.js</span>
+              <span class="skill-chip sc-amber">Express</span>
+              <span class="skill-chip sc-rose">Redis</span>
+              <span class="skill-chip sc-blue">Distributed Systems</span>
+              <span class="skill-chip sc-violet">Kubernetes</span>
+              <span class="skill-chip sc-cyan">CI/CD</span>
+              <span class="skill-chip sc-teal">LLM Fine-tuning</span>
+              <!-- duplicate -->
+              <span class="skill-chip sc-emerald">RAG / Embeddings</span>
+              <span class="skill-chip sc-purple">Vision APIs</span>
+              <span class="skill-chip sc-sky">React</span>
+              <span class="skill-chip sc-green">Node.js</span>
+              <span class="skill-chip sc-amber">Express</span>
+              <span class="skill-chip sc-rose">Redis</span>
+              <span class="skill-chip sc-blue">Distributed Systems</span>
+              <span class="skill-chip sc-violet">Kubernetes</span>
+              <span class="skill-chip sc-cyan">CI/CD</span>
+              <span class="skill-chip sc-teal">LLM Fine-tuning</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ─── TECH STACK ─────────────────────────────────────────────── -->
-      <section class="section" id="stack">
-        <div class="container">
-          <p class="section-eyebrow" data-reveal>Tech Stack</p>
-          <h2 class="section-title" data-reveal data-delay="60">Tools I work with every day.</h2>
-          <div class="stack-groups" data-reveal data-delay="120">
-            <div class="stack-group">
-              <p class="stack-group-label">Languages</p>
-              <div class="chips">
-                <span class="chip chip-amber">Java</span>
-                <span class="chip chip-blue">Python</span>
-                <span class="chip chip-sky">TypeScript</span>
-              </div>
-            </div>
-            <div class="stack-group">
-              <p class="stack-group-label">Backend &amp; Infra</p>
-              <div class="chips">
-                <span class="chip chip-orange">AWS</span>
-                <span class="chip chip-red">Apache Spark</span>
-                <span class="chip chip-cyan">Docker</span>
-                <span class="chip chip-violet">Terraform</span>
-                <span class="chip chip-green">MongoDB</span>
-              </div>
-            </div>
-            <div class="stack-group">
-              <p class="stack-group-label">AI / ML</p>
-              <div class="chips">
-                <span class="chip chip-teal">OpenAI</span>
-                <span class="chip chip-emerald">FastAPI</span>
-                <span class="chip chip-indigo">RAG / Embeddings</span>
-                <span class="chip chip-purple">Vision APIs</span>
-              </div>
-            </div>
-            <div class="stack-group">
-              <p class="stack-group-label">Frontend</p>
-              <div class="chips">
-                <span class="chip chip-sky">React</span>
-                <span class="chip chip-green">Node.js</span>
-                <span class="chip chip-amber">Express</span>
-                <span class="chip chip-rose">TypeScript</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="section-div"></div>
 
-      <!-- ─── IMPACT ─────────────────────────────────────────────────── -->
-      <section class="section section-dark" id="impact">
+      <!-- ─── IMPACT ────────────────────────────────────────────────── -->
+      <section class="section" id="impact">
         <div class="container">
-          <p class="section-eyebrow eyebrow-dim" data-reveal>Why hire me</p>
-          <h2 class="section-title title-light" data-reveal data-delay="60">
+          <p class="eyebrow" data-reveal>Why hire me</p>
+          <h2 class="sec-title" data-reveal data-delay="60">
             Reliable systems. Clear product<br />thinking. Measurable outcomes.
           </h2>
           <div class="impact-grid">
             <article class="impact-card" data-reveal data-delay="80">
-              <div class="impact-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <div class="ic-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               </div>
-              <p class="impact-tag">Operational Systems</p>
+              <p class="ic-tag">Operational Systems</p>
               <h3>High-scale planning workflows at Amazon</h3>
               <p>Designed simulation and data pipelines spanning inbound receiving through last-mile delivery so planning teams could run weekly what-if scenarios with reproducible, versioned inputs.</p>
             </article>
             <article class="impact-card" data-reveal data-delay="160">
-              <div class="impact-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <div class="ic-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
-              <p class="impact-tag">Migration &amp; Reliability</p>
+              <p class="ic-tag">Migration &amp; Reliability</p>
               <h3>Production cutover with &lt;0.1% fallback</h3>
               <p>Introduced parity testing, feature flags, request shims, and data onboarding paths that drove fallback below 0.1% and supported full legacy deprecation — saving $2M annually.</p>
             </article>
             <article class="impact-card" data-reveal data-delay="240">
-              <div class="impact-icon-wrap">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <div class="ic-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               </div>
-              <p class="impact-tag">Full-Stack Delivery</p>
+              <p class="ic-tag">Full-Stack Delivery</p>
               <h3>End-to-end commerce systems at Flipkart</h3>
               <p>Built React interfaces, Node and Express APIs, MongoDB-backed workflows, and cloud deployments that supported commerce experiences end to end in production.</p>
             </article>
@@ -184,23 +206,26 @@
         </div>
       </section>
 
-      <!-- ─── PROJECTS ───────────────────────────────────────────────── -->
+      <div class="section-div"></div>
+
+      <!-- ─── PROJECTS ──────────────────────────────────────────────── -->
       <section class="section" id="projects">
         <div class="container">
-          <p class="section-eyebrow" data-reveal>Projects</p>
-          <h2 class="section-title" data-reveal data-delay="60">Things I've built.</h2>
+          <p class="eyebrow" data-reveal>Projects</p>
+          <h2 class="sec-title" data-reveal data-delay="60">Things I've built.</h2>
           <div class="project-grid">
 
-            <article class="project-card pc-dark" data-reveal data-delay="80">
-              <div class="pc-body">
+            <article class="project-card pc-blue tilt-card" data-reveal data-delay="80">
+              <div class="pc-glow"></div>
+              <div class="pc-inner">
                 <div class="pc-top">
-                  <span class="pc-category">Agentic Ops</span>
-                  <a class="pc-gh" href="https://github.com/Hperam/runbook-agent" target="_blank" rel="noreferrer" aria-label="View runbook-agent on GitHub">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span class="pc-cat">Agentic Ops</span>
+                  <a class="pc-gh" href="https://github.com/Hperam/runbook-agent" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
                 </div>
                 <h3>Runbook Agent</h3>
-                <p>Incident response copilot that correlates logs, metrics, and traces to surface root causes and suggest remediation steps. Built with OpenAI function calling, CloudWatch, and RAG.</p>
+                <p>Incident response copilot that correlates logs, metrics, and traces to surface root causes and suggest remediation steps — powered by OpenAI function calling and RAG over runbooks.</p>
                 <ul class="pc-tags">
                   <li>OpenAI</li><li>CloudWatch</li><li>FastAPI</li><li>RAG</li><li>Python</li>
                 </ul>
@@ -211,32 +236,34 @@
               </div>
             </article>
 
-            <article class="project-card pc-light" data-reveal data-delay="160">
-              <div class="pc-body">
+            <article class="project-card pc-slate tilt-card" data-reveal data-delay="160">
+              <div class="pc-glow pc-glow-cyan"></div>
+              <div class="pc-inner">
                 <div class="pc-top">
-                  <span class="pc-category pc-category-dark">Simulation + AI</span>
-                  <a class="pc-gh pc-gh-dark" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer" aria-label="View scenarioops-ai on GitHub">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span class="pc-cat">Simulation + AI</span>
+                  <a class="pc-gh pc-gh-inv" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
                 </div>
-                <h3 style="color:#0f172a">ScenarioOps AI</h3>
-                <p style="color:#475569">AI-guided planning workspace combining large-scale fulfillment simulations with demand forecasting. Supports 16-week forecast horizons and interactive what-if scenarios.</p>
-                <ul class="pc-tags pc-tags-light">
+                <h3>ScenarioOps AI</h3>
+                <p>AI-guided planning workspace combining large-scale fulfillment simulations with demand forecasting. Supports 16-week forecast horizons and interactive what-if scenarios.</p>
+                <ul class="pc-tags pc-tags-inv">
                   <li>Java</li><li>Spark</li><li>AWS</li><li>OpenAI</li><li>React</li>
                 </ul>
               </div>
-              <div class="pc-footer pc-footer-light">
-                <a class="pc-link pc-link-indigo" href="projects/scenarioops-ai.html">Case study →</a>
-                <a class="pc-link pc-link-muted" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer">GitHub →</a>
+              <div class="pc-footer pc-footer-inv">
+                <a class="pc-link pc-link-inv" href="projects/scenarioops-ai.html">Case study →</a>
+                <a class="pc-link pc-link-inv-dim" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer">GitHub →</a>
               </div>
             </article>
 
-            <article class="project-card pc-warm" data-reveal data-delay="240">
-              <div class="pc-body">
+            <article class="project-card pc-warm tilt-card" data-reveal data-delay="240">
+              <div class="pc-glow pc-glow-orange"></div>
+              <div class="pc-inner">
                 <div class="pc-top">
-                  <span class="pc-category">Multimodal</span>
-                  <a class="pc-gh" href="https://github.com/Hperam/commerce-copilot" target="_blank" rel="noreferrer" aria-label="View commerce-copilot on GitHub">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span class="pc-cat">Multimodal</span>
+                  <a class="pc-gh" href="https://github.com/Hperam/commerce-copilot" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
                 </div>
                 <h3>Commerce Copilot</h3>
@@ -255,29 +282,31 @@
         </div>
       </section>
 
+      <div class="section-div"></div>
+
       <!-- ─── EXPERIENCE ─────────────────────────────────────────────── -->
-      <section class="section section-muted" id="experience">
+      <section class="section" id="experience">
         <div class="container">
-          <p class="section-eyebrow" data-reveal>Experience</p>
-          <h2 class="section-title" data-reveal data-delay="60">Where I've worked.</h2>
+          <p class="eyebrow" data-reveal>Experience</p>
+          <h2 class="sec-title" data-reveal data-delay="60">Where I've worked.</h2>
           <div class="timeline">
 
             <article class="tl-item" data-reveal data-delay="80">
-              <div class="tl-line-wrap">
-                <div class="tl-dot tl-dot-indigo"></div>
+              <div class="tl-aside">
+                <div class="tl-dot tl-dot-grad"></div>
                 <div class="tl-line"></div>
               </div>
               <div class="tl-body">
-                <div class="tl-header">
+                <div class="tl-head">
                   <div>
-                    <h3 class="tl-company">Amazon</h3>
+                    <h3 class="tl-co">Amazon</h3>
                     <p class="tl-role">Software Engineer · Seattle, WA</p>
                   </div>
                   <span class="tl-badge tl-badge-indigo">Backend · Data · AI</span>
                 </div>
                 <p class="tl-desc">Worked on large-scale fulfillment simulations and the data pipelines behind demand forecasting, staffing decisions, and cross-site planning workflows.</p>
-                <ul class="tl-bullets">
-                  <li>Built reproducible simulation inputs with auditability and versioned scenarios across supply chain systems</li>
+                <ul class="tl-list">
+                  <li>Built reproducible simulation inputs with auditability and versioned scenarios</li>
                   <li>Improved forecast quality tracking with backtesting and accuracy metrics across millions of SKUs</li>
                   <li>Introduced data contracts, observability, and rollout safety — unlocked <strong>$2M annual savings</strong></li>
                 </ul>
@@ -285,20 +314,20 @@
             </article>
 
             <article class="tl-item" data-reveal data-delay="160">
-              <div class="tl-line-wrap">
+              <div class="tl-aside">
                 <div class="tl-dot tl-dot-amber"></div>
                 <div class="tl-line"></div>
               </div>
               <div class="tl-body">
-                <div class="tl-header">
+                <div class="tl-head">
                   <div>
-                    <h3 class="tl-company">Flipkart</h3>
+                    <h3 class="tl-co">Flipkart</h3>
                     <p class="tl-role">Software Development Engineer · Bangalore, India</p>
                   </div>
                   <span class="tl-badge tl-badge-amber">Full-Stack</span>
                 </div>
                 <p class="tl-desc">Delivered full-stack commerce workflows with React, Node.js, Express, MongoDB, Docker, Terraform, and AWS-backed deployments.</p>
-                <ul class="tl-bullets">
+                <ul class="tl-list">
                   <li>Built responsive React interfaces and reusable frontend component systems</li>
                   <li>Developed REST APIs for listings, auth, checkout, and order management</li>
                   <li>Owned secure auth patterns and end-to-end production deployment setup</li>
@@ -306,14 +335,14 @@
               </div>
             </article>
 
-            <article class="tl-item tl-item-last" data-reveal data-delay="240">
-              <div class="tl-line-wrap">
-                <div class="tl-dot tl-dot-muted"></div>
+            <article class="tl-item tl-last" data-reveal data-delay="240">
+              <div class="tl-aside">
+                <div class="tl-dot tl-dot-dim"></div>
               </div>
               <div class="tl-body">
-                <div class="tl-header">
+                <div class="tl-head">
                   <div>
-                    <h3 class="tl-company">University at Buffalo</h3>
+                    <h3 class="tl-co">University at Buffalo</h3>
                     <p class="tl-role">M.S. Computer Science · 2021 – 2022</p>
                   </div>
                   <span class="tl-badge tl-badge-green">Graduate</span>
@@ -326,23 +355,25 @@
         </div>
       </section>
 
-      <!-- ─── CONTACT ─────────────────────────────────────────────────── -->
+      <div class="section-div"></div>
+
+      <!-- ─── CONTACT ───────────────────────────────────────────────── -->
       <section class="section" id="contact">
         <div class="container">
           <div class="contact-card" data-reveal>
-            <div class="cg cg1"></div>
-            <div class="cg cg2"></div>
-            <div class="contact-inner">
+            <div class="cc-orb cc-orb-1"></div>
+            <div class="cc-orb cc-orb-2"></div>
+            <div class="cc-inner">
               <div class="available-badge available-badge-sm">
                 <span class="available-dot"></span>
                 Open to work
               </div>
-              <h2 class="contact-title">Let's build something<br />together.</h2>
-              <p class="contact-desc">Looking for backend, platform, and full-stack SDE 2 / Senior SDE roles. If your team values ownership, system design, cloud scale, and practical AI product work — I'd love to connect.</p>
-              <div class="contact-actions">
-                <a class="btn btn-primary btn-lg" href="mailto:harshithsai98@gmail.com">harshithsai98@gmail.com</a>
-                <a class="btn btn-ghost-white" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                <a class="btn btn-ghost-white" href="https://github.com/Hperam" target="_blank" rel="noreferrer">GitHub ↗</a>
+              <h2 class="cc-title">Let's build something<br />together.</h2>
+              <p class="cc-desc">Looking for backend, platform, and full-stack SDE 2 / Senior SDE roles. If your team values ownership, system design, cloud scale, and practical AI product work — I'd love to connect.</p>
+              <div class="cc-actions">
+                <a class="btn btn-primary btn-lg magnetic" href="mailto:harshithsai98@gmail.com">harshithsai98@gmail.com</a>
+                <a class="btn btn-ghost-w" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a class="btn btn-ghost-w" href="https://github.com/Hperam" target="_blank" rel="noreferrer">GitHub ↗</a>
               </div>
             </div>
           </div>
