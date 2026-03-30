@@ -1,7 +1,9 @@
 "use client";
 
 import clsx from "clsx";
-import type { AnchorHTMLAttributes, ReactNode } from "react";
+import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
 import { useRef } from "react";
 
 type MagneticButtonProps = {
@@ -9,7 +11,7 @@ type MagneticButtonProps = {
   href: string;
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
-} & AnchorHTMLAttributes<HTMLAnchorElement>;
+} & Omit<HTMLMotionProps<"a">, "children" | "href" | "className">;
 
 export function MagneticButton({
   children,
@@ -44,13 +46,15 @@ export function MagneticButton({
   };
 
   return (
-    <a
+    <motion.a
       ref={ref}
       href={href}
       target={isExternal ? "_blank" : rest.target}
       rel={isExternal ? "noreferrer" : rest.rel}
       onMouseMove={handleMove}
       onMouseLeave={reset}
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.98 }}
       className={clsx(
         "group inline-flex min-h-[48px] items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-[-0.02em] transition duration-300 will-change-transform",
         variant === "primary" &&
@@ -64,6 +68,6 @@ export function MagneticButton({
       {...rest}
     >
       <span className="relative z-10">{children}</span>
-    </a>
+    </motion.a>
   );
 }
