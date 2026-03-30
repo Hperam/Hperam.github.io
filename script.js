@@ -1,30 +1,63 @@
-const yearNode = document.querySelector("#year");
+/* ─── YEAR ──────────────────────────────────────────────────────────────── */
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-if (yearNode) {
-  yearNode.textContent = String(new Date().getFullYear());
+/* ─── SCROLL PROGRESS BAR ───────────────────────────────────────────────── */
+const scrollBar = document.getElementById('scroll-bar');
+if (scrollBar) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    scrollBar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+  }, { passive: true });
 }
 
-const revealNodes = document.querySelectorAll("[data-reveal]");
+/* ─── HEADER SCROLL EFFECT ──────────────────────────────────────────────── */
+const header = document.getElementById('site-header');
+if (header) {
+  const onScroll = () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
 
-if ("IntersectionObserver" in window && revealNodes.length > 0) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+/* ─── REVEAL ON SCROLL ──────────────────────────────────────────────────── */
+const revealEls = document.querySelectorAll('[data-reveal]');
 
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      rootMargin: "0px 0px -10% 0px",
-      threshold: 0.12,
-    }
-  );
+if ('IntersectionObserver' in window && revealEls.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = parseInt(el.dataset.delay || '0', 10);
+      setTimeout(() => el.classList.add('visible'), delay);
+      observer.unobserve(el);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
-  revealNodes.forEach((node) => observer.observe(node));
+  revealEls.forEach(el => observer.observe(el));
 } else {
-  revealNodes.forEach((node) => node.classList.add("is-visible"));
+  revealEls.forEach(el => el.classList.add('visible'));
+}
+
+/* ─── ACTIVE NAV LINK ───────────────────────────────────────────────────── */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+if (sections.length && navLinks.length) {
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + id
+            ? 'var(--text)'
+            : '';
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
 }
