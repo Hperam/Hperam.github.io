@@ -19,9 +19,22 @@
   </head>
   <body>
 
+    <!-- PAGE LOADER -->
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader-mark">HSP</div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="cur-dot"  id="cur-dot"  aria-hidden="true"></div>
+    <div class="cur-ring" id="cur-ring" aria-hidden="true"></div>
+
+    <!-- FILM GRAIN -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- SCROLL PROGRESS -->
     <div id="scroll-bar"></div>
 
-    <!-- ─── HEADER ───────────────────────────────────────────────────── -->
+    <!-- ─── HEADER ───────────────────────────────────────────────── -->
     <header class="site-header" id="site-header">
       <div class="container nav-row">
         <a class="brand" href="#top" aria-label="Home">
@@ -33,17 +46,18 @@
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a class="nav-resume" href="assets/Harshith-Sai-Peram-Resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+        <a class="nav-resume hover-link" href="assets/Harshith-Sai-Peram-Resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
       </div>
     </header>
 
     <main id="top">
 
-      <!-- ─── HERO ──────────────────────────────────────────────────── -->
+      <!-- ─── HERO ──────────────────────────────────────────────── -->
       <section class="hero">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="orb orb-1" data-parallax="0.12"></div>
+        <div class="orb orb-2" data-parallax="0.2"></div>
+        <div class="orb orb-3" data-parallax="0.08"></div>
         <div class="container hero-inner">
 
           <div class="available-badge" data-reveal data-delay="0">
@@ -51,33 +65,33 @@
             Available for SDE 2 &amp; Senior SDE roles
           </div>
 
-          <h1 class="hero-name" data-reveal data-delay="100">
-            Harshith Sai<br />
-            <span class="grad-text">Peram.</span>
+          <h1 class="hero-name">
+            <span class="hero-line"><span class="hero-line-inner">Harshith Sai</span></span>
+            <span class="hero-line"><span class="hero-line-inner grad-text" data-shimmer>Peram.</span></span>
           </h1>
 
-          <p class="hero-role" data-reveal data-delay="200">
-            <span class="role-prefix">I build </span><span id="typed-role"></span><span class="cursor-blink">|</span>
+          <p class="hero-role" data-reveal data-delay="380">
+            <span class="role-prefix">I build&nbsp;</span><span id="typed-role"></span><span class="cursor-blink">|</span>
             <span class="ex-tag">Ex-Amazon</span>
           </p>
 
-          <p class="hero-bio" data-reveal data-delay="300">
+          <p class="hero-bio" data-reveal data-delay="480">
             Scalable backend systems, distributed data pipelines, and AI-powered products
             that work at scale. At Amazon I worked on fulfillment simulation and demand
             forecasting infrastructure influencing billions of dollars in inventory decisions.
           </p>
 
-          <div class="hero-actions" data-reveal data-delay="400">
-            <a class="btn btn-primary magnetic" href="assets/Harshith-Sai-Peram-Resume.pdf" target="_blank" rel="noreferrer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <div class="hero-actions" data-reveal data-delay="580">
+            <a class="btn btn-primary magnetic hover-link" href="assets/Harshith-Sai-Peram-Resume.pdf" target="_blank" rel="noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Resume
             </a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://github.com/Hperam" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn btn-outline" href="mailto:harshithsai98@gmail.com">Email me</a>
+            <a class="btn btn-ghost hover-link" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-ghost hover-link" href="https://github.com/Hperam" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn-outline hover-link" href="mailto:harshithsai98@gmail.com">Email me</a>
           </div>
 
-          <div class="hero-stats" data-reveal data-delay="500">
+          <div class="hero-stats" data-reveal data-delay="680">
             <div class="stat">
               <span class="stat-num" data-count="2" data-prefix="$" data-suffix="M">$2M</span>
               <span class="stat-label">annual savings unlocked</span>
@@ -102,18 +116,15 @@
         </div>
       </section>
 
-      <!-- ─── GRADIENT DIVIDER ──────────────────────────────────────── -->
       <div class="section-div"></div>
 
-      <!-- ─── SKILLS ────────────────────────────────────────────────── -->
+      <!-- ─── SKILLS ────────────────────────────────────────────── -->
       <section class="section" id="skills">
         <div class="container">
           <p class="eyebrow" data-reveal>Tech Stack</p>
           <h2 class="sec-title" data-reveal data-delay="60">Tools I work with every day.</h2>
         </div>
-
         <div class="marquee-zone" data-reveal data-delay="120">
-          <!-- Row 1: left → right -->
           <div class="marquee-row">
             <div class="marquee-track">
               <span class="skill-chip sc-amber">Java</span>
@@ -126,7 +137,6 @@
               <span class="skill-chip sc-green">MongoDB</span>
               <span class="skill-chip sc-teal">OpenAI</span>
               <span class="skill-chip sc-indigo">FastAPI</span>
-              <!-- duplicate for seamless loop -->
               <span class="skill-chip sc-amber">Java</span>
               <span class="skill-chip sc-blue">Python</span>
               <span class="skill-chip sc-sky">TypeScript</span>
@@ -139,9 +149,8 @@
               <span class="skill-chip sc-indigo">FastAPI</span>
             </div>
           </div>
-          <!-- Row 2: right → left -->
           <div class="marquee-row">
-            <div class="marquee-track marquee-reverse">
+            <div class="marquee-track marquee-rev">
               <span class="skill-chip sc-emerald">RAG / Embeddings</span>
               <span class="skill-chip sc-purple">Vision APIs</span>
               <span class="skill-chip sc-sky">React</span>
@@ -152,7 +161,6 @@
               <span class="skill-chip sc-violet">Kubernetes</span>
               <span class="skill-chip sc-cyan">CI/CD</span>
               <span class="skill-chip sc-teal">LLM Fine-tuning</span>
-              <!-- duplicate -->
               <span class="skill-chip sc-emerald">RAG / Embeddings</span>
               <span class="skill-chip sc-purple">Vision APIs</span>
               <span class="skill-chip sc-sky">React</span>
@@ -170,7 +178,7 @@
 
       <div class="section-div"></div>
 
-      <!-- ─── IMPACT ────────────────────────────────────────────────── -->
+      <!-- ─── IMPACT ────────────────────────────────────────────── -->
       <section class="section" id="impact">
         <div class="container">
           <p class="eyebrow" data-reveal>Why hire me</p>
@@ -178,7 +186,7 @@
             Reliable systems. Clear product<br />thinking. Measurable outcomes.
           </h2>
           <div class="impact-grid">
-            <article class="impact-card" data-reveal data-delay="80">
+            <article class="impact-card spotlight" data-reveal data-delay="80">
               <div class="ic-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               </div>
@@ -186,7 +194,7 @@
               <h3>High-scale planning workflows at Amazon</h3>
               <p>Designed simulation and data pipelines spanning inbound receiving through last-mile delivery so planning teams could run weekly what-if scenarios with reproducible, versioned inputs.</p>
             </article>
-            <article class="impact-card" data-reveal data-delay="160">
+            <article class="impact-card spotlight" data-reveal data-delay="160">
               <div class="ic-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
@@ -194,7 +202,7 @@
               <h3>Production cutover with &lt;0.1% fallback</h3>
               <p>Introduced parity testing, feature flags, request shims, and data onboarding paths that drove fallback below 0.1% and supported full legacy deprecation — saving $2M annually.</p>
             </article>
-            <article class="impact-card" data-reveal data-delay="240">
+            <article class="impact-card spotlight" data-reveal data-delay="240">
               <div class="ic-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               </div>
@@ -208,19 +216,19 @@
 
       <div class="section-div"></div>
 
-      <!-- ─── PROJECTS ──────────────────────────────────────────────── -->
+      <!-- ─── PROJECTS ──────────────────────────────────────────── -->
       <section class="section" id="projects">
         <div class="container">
           <p class="eyebrow" data-reveal>Projects</p>
           <h2 class="sec-title" data-reveal data-delay="60">Things I've built.</h2>
           <div class="project-grid">
 
-            <article class="project-card pc-blue tilt-card" data-reveal data-delay="80">
+            <article class="project-card pc-blue tilt-card spotlight" data-reveal data-delay="80">
               <div class="pc-glow"></div>
               <div class="pc-inner">
                 <div class="pc-top">
                   <span class="pc-cat">Agentic Ops</span>
-                  <a class="pc-gh" href="https://github.com/Hperam/runbook-agent" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <a class="pc-gh hover-link" href="https://github.com/Hperam/runbook-agent" target="_blank" rel="noreferrer" aria-label="GitHub">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
                 </div>
@@ -231,39 +239,39 @@
                 </ul>
               </div>
               <div class="pc-footer">
-                <a class="pc-link" href="projects/runbook-agent.html">Case study →</a>
-                <a class="pc-link pc-link-dim" href="https://github.com/Hperam/runbook-agent" target="_blank" rel="noreferrer">GitHub →</a>
+                <a class="pc-link hover-link" href="projects/runbook-agent.html">Case study →</a>
+                <a class="pc-link pc-link-dim hover-link" href="https://github.com/Hperam/runbook-agent" target="_blank" rel="noreferrer">GitHub →</a>
               </div>
             </article>
 
-            <article class="project-card pc-slate tilt-card" data-reveal data-delay="160">
+            <article class="project-card pc-slate tilt-card spotlight" data-reveal data-delay="160">
               <div class="pc-glow pc-glow-cyan"></div>
               <div class="pc-inner">
                 <div class="pc-top">
-                  <span class="pc-cat">Simulation + AI</span>
-                  <a class="pc-gh pc-gh-inv" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer" aria-label="GitHub">
+                  <span class="pc-cat pc-cat-inv">Simulation + AI</span>
+                  <a class="pc-gh pc-gh-inv hover-link" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer" aria-label="GitHub">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
                 </div>
-                <h3>ScenarioOps AI</h3>
-                <p>AI-guided planning workspace combining large-scale fulfillment simulations with demand forecasting. Supports 16-week forecast horizons and interactive what-if scenarios.</p>
+                <h3 style="color:#0f172a">ScenarioOps AI</h3>
+                <p style="color:rgba(15,23,42,0.6)">AI-guided planning workspace combining large-scale fulfillment simulations with demand forecasting. Supports 16-week forecast horizons and interactive what-if scenarios.</p>
                 <ul class="pc-tags pc-tags-inv">
                   <li>Java</li><li>Spark</li><li>AWS</li><li>OpenAI</li><li>React</li>
                 </ul>
               </div>
               <div class="pc-footer pc-footer-inv">
-                <a class="pc-link pc-link-inv" href="projects/scenarioops-ai.html">Case study →</a>
-                <a class="pc-link pc-link-inv-dim" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer">GitHub →</a>
+                <a class="pc-link pc-link-indigo hover-link" href="projects/scenarioops-ai.html">Case study →</a>
+                <a class="pc-link pc-link-inv-dim hover-link" href="https://github.com/Hperam/scenarioops-ai" target="_blank" rel="noreferrer">GitHub →</a>
               </div>
             </article>
 
-            <article class="project-card pc-warm tilt-card" data-reveal data-delay="240">
+            <article class="project-card pc-warm tilt-card spotlight" data-reveal data-delay="240">
               <div class="pc-glow pc-glow-orange"></div>
               <div class="pc-inner">
                 <div class="pc-top">
                   <span class="pc-cat">Multimodal</span>
-                  <a class="pc-gh" href="https://github.com/Hperam/commerce-copilot" target="_blank" rel="noreferrer" aria-label="GitHub">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <a class="pc-gh hover-link" href="https://github.com/Hperam/commerce-copilot" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                   </a>
                 </div>
                 <h3>Commerce Copilot</h3>
@@ -273,8 +281,8 @@
                 </ul>
               </div>
               <div class="pc-footer">
-                <a class="pc-link" href="projects/multimodal-commerce-copilot.html">Case study →</a>
-                <a class="pc-link pc-link-dim" href="https://github.com/Hperam/commerce-copilot" target="_blank" rel="noreferrer">GitHub →</a>
+                <a class="pc-link hover-link" href="projects/multimodal-commerce-copilot.html">Case study →</a>
+                <a class="pc-link pc-link-dim hover-link" href="https://github.com/Hperam/commerce-copilot" target="_blank" rel="noreferrer">GitHub →</a>
               </div>
             </article>
 
@@ -284,13 +292,12 @@
 
       <div class="section-div"></div>
 
-      <!-- ─── EXPERIENCE ─────────────────────────────────────────────── -->
+      <!-- ─── EXPERIENCE ─────────────────────────────────────────── -->
       <section class="section" id="experience">
         <div class="container">
           <p class="eyebrow" data-reveal>Experience</p>
           <h2 class="sec-title" data-reveal data-delay="60">Where I've worked.</h2>
           <div class="timeline">
-
             <article class="tl-item" data-reveal data-delay="80">
               <div class="tl-aside">
                 <div class="tl-dot tl-dot-grad"></div>
@@ -307,12 +314,11 @@
                 <p class="tl-desc">Worked on large-scale fulfillment simulations and the data pipelines behind demand forecasting, staffing decisions, and cross-site planning workflows.</p>
                 <ul class="tl-list">
                   <li>Built reproducible simulation inputs with auditability and versioned scenarios</li>
-                  <li>Improved forecast quality tracking with backtesting and accuracy metrics across millions of SKUs</li>
-                  <li>Introduced data contracts, observability, and rollout safety — unlocked <strong>$2M annual savings</strong></li>
+                  <li>Improved forecast quality tracking with backtesting across millions of SKUs</li>
+                  <li>Introduced data contracts and rollout safety — unlocked <strong>$2M annual savings</strong></li>
                 </ul>
               </div>
             </article>
-
             <article class="tl-item" data-reveal data-delay="160">
               <div class="tl-aside">
                 <div class="tl-dot tl-dot-amber"></div>
@@ -334,7 +340,6 @@
                 </ul>
               </div>
             </article>
-
             <article class="tl-item tl-last" data-reveal data-delay="240">
               <div class="tl-aside">
                 <div class="tl-dot tl-dot-dim"></div>
@@ -350,14 +355,13 @@
                 <p class="tl-desc">Graduate training in computer science. B.Tech in ECE with IoT and Sensors specialization from VIT University.</p>
               </div>
             </article>
-
           </div>
         </div>
       </section>
 
       <div class="section-div"></div>
 
-      <!-- ─── CONTACT ───────────────────────────────────────────────── -->
+      <!-- ─── CONTACT ───────────────────────────────────────────── -->
       <section class="section" id="contact">
         <div class="container">
           <div class="contact-card" data-reveal>
@@ -371,9 +375,9 @@
               <h2 class="cc-title">Let's build something<br />together.</h2>
               <p class="cc-desc">Looking for backend, platform, and full-stack SDE 2 / Senior SDE roles. If your team values ownership, system design, cloud scale, and practical AI product work — I'd love to connect.</p>
               <div class="cc-actions">
-                <a class="btn btn-primary btn-lg magnetic" href="mailto:harshithsai98@gmail.com">harshithsai98@gmail.com</a>
-                <a class="btn btn-ghost-w" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                <a class="btn btn-ghost-w" href="https://github.com/Hperam" target="_blank" rel="noreferrer">GitHub ↗</a>
+                <a class="btn btn-primary btn-lg magnetic hover-link" href="mailto:harshithsai98@gmail.com">harshithsai98@gmail.com</a>
+                <a class="btn btn-ghost-w hover-link" href="https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                <a class="btn btn-ghost-w hover-link" href="https://github.com/Hperam" target="_blank" rel="noreferrer">GitHub ↗</a>
               </div>
             </div>
           </div>
