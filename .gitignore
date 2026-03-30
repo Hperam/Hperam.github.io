@@ -1,4 +1,8 @@
 .DS_Store
 Thumbs.db
+node_modules
+.next
+out
+npm-debug.log*
 commerce-copilot/node_modules
 commerce-copilot/.env

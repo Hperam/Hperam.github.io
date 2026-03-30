@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Harshith Sai Peram Portfolio">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbf6ed" />
+      <stop offset="100%" stop-color="#f4ebdb" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f36c2d" />
+      <stop offset="100%" stop-color="#ffb36a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1040" cy="120" r="180" fill="#dff6f2" />
+  <circle cx="180" cy="540" r="220" fill="#fff2de" />
+
+  <rect x="80" y="72" width="180" height="70" rx="24" fill="url(#accent)" />
+  <text
+    x="170"
+    y="117"
+    text-anchor="middle"
+    font-size="34"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    fill="#ffffff"
+  >
+    HSP
+  </text>
+
+  <text
+    x="80"
+    y="240"
+    font-size="72"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    fill="#102542"
+  >
+    Harshith Sai Peram
+  </text>
+  <text
+    x="80"
+    y="320"
+    font-size="38"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="600"
+    fill="#d6571d"
+  >
+    Software Engineer
+  </text>
+  <text
+    x="80"
+    y="390"
+    font-size="30"
+    font-family="Arial, Helvetica, sans-serif"
+    fill="#42556f"
+  >
+    Former Amazon engineer building distributed systems,
+  </text>
+  <text
+    x="80"
+    y="434"
+    font-size="30"
+    font-family="Arial, Helvetica, sans-serif"
+    fill="#42556f"
+  >
+    AI products, and data platforms.
+  </text>
+
+  <g transform="translate(80 500)">
+    <rect width="240" height="54" rx="27" fill="#102542" opacity="0.08" />
+    <text
+      x="120"
+      y="35"
+      text-anchor="middle"
+      font-size="24"
+      font-family="Arial, Helvetica, sans-serif"
+      font-weight="600"
+      fill="#102542"
+    >
+      Open to SDE 2 roles
+    </text>
+  </g>
+</svg>

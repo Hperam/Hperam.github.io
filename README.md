@@ -1,16 +1,55 @@
 # hperam.github.io
 
-Portfolio site for Harshith Sai Peram — Software Engineer specializing in backend systems, distributed infrastructure, and AI-powered products.
+Portfolio site for Harshith Sai Peram, a software engineer focused on backend systems, distributed infrastructure, AI-powered products, and polished user-facing experiences.
 
-**Live site:** [hperam.github.io](https://hperam.github.io)
+## Live site
 
----
+- Portfolio: `https://hperam.github.io`
+- Commerce Copilot demo: `https://hperam.github.io/commerce-copilot/`
 
-## About
+## Highlights
 
-This site covers my background, skills, work experience at Amazon and Flipkart, and personal projects including an incident response AI copilot, a supply chain simulation workspace, and a multimodal commerce search engine.
+- premium recruiter-facing homepage built to communicate technical depth and product taste immediately
+- strong story around Amazon-scale systems, Flipkart full-stack commerce delivery, and AI-forward product engineering
+- live multimodal Commerce Copilot demo with tab-scoped OpenAI API key handling
+- static export deployment through GitHub Pages and GitHub Actions
 
-## Built With
+## Tech stack
 
-- HTML, CSS, JavaScript
-- Deployed via GitHub Pages
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- GitHub Pages
+- GitHub Actions
+
+## Featured work
+
+- `Commerce Copilot`: multimodal product discovery experience with text, voice, image input, grounded retrieval, and AI recommendations
+- `ScenarioOps AI`: operations planning concept translating simulation-heavy Amazon experience into an explainable decision surface
+- `Runbook Agent`: incident-triage concept grounded in logs, metrics, traces, and runbook retrieval
+
+## Repo structure
+
+- `app/`: Next.js routes, layout, and global styles
+- `components/`: reusable UI and section components
+- `data/portfolio.ts`: centralized portfolio content model
+- `public/`: deployed static assets including resume, favicon, and social preview image
+- `commerce-copilot/`: shipped standalone demo app source
+- `scripts/postbuild.mjs`: copies the live demo into the static export output
+- `.github/workflows/deploy-pages.yml`: GitHub Pages build and deploy pipeline
+
+## Local preview
+
+```bash
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+To generate the static production export used by GitHub Pages:
+
+```bash
+npm run build
+```
