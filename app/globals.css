@@ -100,6 +100,11 @@ html[data-theme="light"] {
     pointer-events: none;
   }
 
+  html[data-theme="light"] .hero-badge {
+    @apply border-brand/40 bg-brand/20 text-brand;
+    filter: saturate(1.3) brightness(0.85);
+  }
+
   html[data-theme="light"] .surface-card,
   html[data-theme="light"] .skill-card,
   html[data-theme="light"] .project-card,

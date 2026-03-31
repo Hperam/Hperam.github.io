@@ -22,7 +22,7 @@ export function HeroSection() {
       <div className="mx-auto grid max-w-[1240px] gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Left — name, title, intro */}
         <div className="min-w-0 space-y-6">
-          <p className="hero-enter hero-stagger-1 inline-flex rounded-full border border-brand/20 bg-brand/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-brand">
+          <p className="hero-enter hero-stagger-1 hero-badge inline-flex rounded-full border border-brand/30 bg-brand/15 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-brand">
             Open to software engineer roles
           </p>
           <div className="space-y-5">
