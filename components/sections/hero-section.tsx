@@ -1,6 +1,7 @@
 import { HeroAiVisual } from "@/components/hero-ai-visual";
 import { portfolio } from "@/data/portfolio";
 import { MagneticButton } from "@/components/ui/magnetic-button";
+import { SocialLinks } from "@/components/ui/social-links";
 
 export function HeroSection() {
   return (
@@ -8,7 +9,7 @@ export function HeroSection() {
       <div className="mx-auto grid max-w-[1240px] gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="min-w-0 space-y-8">
           <p className="hero-enter hero-stagger-1 inline-flex rounded-full border border-brand/20 bg-brand/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-brand">
-            Open to SDE 2 opportunities
+            Open to software engineer roles
           </p>
           <div className="space-y-6">
             <h1 className="hero-enter hero-stagger-2 font-display text-5xl font-semibold tracking-[-0.075em] text-ink md:text-7xl xl:text-[6.2rem]">
@@ -25,28 +26,15 @@ export function HeroSection() {
             </p>
           </div>
 
-          <div className="hero-enter hero-stagger-5 flex flex-wrap gap-4">
+          <div className="hero-enter hero-stagger-5 flex flex-wrap items-center gap-4">
             <MagneticButton href="#projects">View Projects</MagneticButton>
             <MagneticButton href="#contact" variant="secondary">
               Contact Me
             </MagneticButton>
-            <MagneticButton href="/resume/Harshith-Sai-Peram-Resume.pdf" variant="ghost">
+            <MagneticButton href="/resume/Harshith-Sai-Peram-Resume.pdf" variant="secondary">
               Download Resume
             </MagneticButton>
-          </div>
-
-          <div className="hero-enter hero-stagger-6 flex flex-wrap gap-6 text-sm text-muted">
-            {portfolio.socials.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="transition hover:text-white"
-              >
-                {item.label}
-              </a>
-            ))}
+            <SocialLinks labels={["GitHub", "LinkedIn"]} />
           </div>
 
           <div className="marquee-shell">

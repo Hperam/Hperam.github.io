@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 
 import { portfolio } from "@/data/portfolio";
 import { Reveal } from "@/components/ui/reveal";
-import { MagneticButton } from "@/components/ui/magnetic-button";
+import { SocialLinks } from "@/components/ui/social-links";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,9 +16,11 @@ export function ContactSection() {
     const email = formData.get("email")?.toString().trim() || "";
     const message = formData.get("message")?.toString().trim() || "";
 
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "a recruiter"}`);
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "someone"}`);
     const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+      [`Name: ${name || "Not provided"}`, email ? `Email: ${email}` : null, "", "Message:", message]
+        .filter(Boolean)
+        .join("\n")
     );
 
     window.location.href = `mailto:${portfolio.email}?subject=${subject}&body=${body}`;
@@ -40,20 +42,8 @@ export function ContactSection() {
               experience quality.
             </p>
             <div className="mt-8 grid gap-4 text-sm text-muted">
-              <p>{portfolio.email}</p>
               <p>{portfolio.location}</p>
-              <div className="flex flex-wrap gap-3">
-                {portfolio.socials.map((item) => (
-                  <MagneticButton
-                    key={item.label}
-                    href={item.href}
-                    variant="secondary"
-                    className="!min-h-[42px]"
-                  >
-                    {item.label}
-                  </MagneticButton>
-                ))}
-              </div>
+              <SocialLinks />
             </div>
           </Reveal>
 
@@ -62,11 +52,11 @@ export function ContactSection() {
               <div className="grid gap-5 md:grid-cols-2">
                 <label className="form-field">
                   <span>Name</span>
-                  <input name="name" type="text" placeholder="Recruiter or hiring manager" required />
+                  <input name="name" type="text" placeholder="Your name" required />
                 </label>
                 <label className="form-field">
-                  <span>Email</span>
-                  <input name="email" type="email" placeholder="name@company.com" required />
+                  <span>Email (optional)</span>
+                  <input name="email" type="email" placeholder="name@company.com" />
                 </label>
               </div>
               <label className="form-field">
@@ -85,11 +75,7 @@ export function ContactSection() {
                 >
                   Send Intro
                 </button>
-                <p className="text-sm text-muted">
-                  {submitted
-                    ? "Opening your default mail client now."
-                    : "This form opens an email draft so it works in a static deployment."}
-                </p>
+                {submitted ? <p className="text-sm text-muted">Opening your default mail client now.</p> : null}
               </div>
             </form>
           </Reveal>
