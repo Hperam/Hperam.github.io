@@ -1,8 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { motion } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
 import type { ReactNode } from "react";
 import { useRef } from "react";
 
@@ -11,14 +9,15 @@ type MagneticButtonProps = {
   href: string;
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
-} & Omit<HTMLMotionProps<"a">, "children" | "href" | "className">;
+  onClick?: () => void;
+};
 
 export function MagneticButton({
   children,
   href,
   variant = "primary",
   className,
-  ...rest
+  onClick
 }: MagneticButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null);
   const isExternal =
@@ -26,9 +25,7 @@ export function MagneticButton({
 
   const handleMove = (event: React.MouseEvent<HTMLAnchorElement>) => {
     const node = ref.current;
-    if (!node) {
-      return;
-    }
+    if (!node) return;
 
     const bounds = node.getBoundingClientRect();
     const offsetX = event.clientX - (bounds.left + bounds.width / 2);
@@ -38,25 +35,21 @@ export function MagneticButton({
   };
 
   const reset = () => {
-    if (!ref.current) {
-      return;
-    }
-
+    if (!ref.current) return;
     ref.current.style.transform = "translate(0px, 0px)";
   };
 
   return (
-    <motion.a
+    <a
       ref={ref}
       href={href}
-      target={isExternal ? "_blank" : rest.target}
-      rel={isExternal ? "noreferrer" : rest.rel}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer" : undefined}
+      onClick={onClick}
       onMouseMove={handleMove}
       onMouseLeave={reset}
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.98 }}
       className={clsx(
-        "group inline-flex min-h-[48px] items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-[-0.02em] transition duration-300 will-change-transform",
+        "btn-shimmer group inline-flex min-h-[48px] items-center justify-center rounded-full px-5 py-3 text-sm font-medium tracking-[-0.02em] transition duration-300 will-change-transform hover:-translate-y-0.5 active:scale-[0.98]",
         variant === "primary" &&
           "border border-white/20 bg-brand/90 text-white shadow-glow hover:bg-brand",
         variant === "secondary" &&
@@ -65,9 +58,8 @@ export function MagneticButton({
           "border border-white/10 bg-transparent text-muted hover:border-white/20 hover:text-white",
         className
       )}
-      {...rest}
     >
       <span className="relative z-10">{children}</span>
-    </motion.a>
+    </a>
   );
 }
