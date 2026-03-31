@@ -483,35 +483,33 @@ html[data-theme="light"] {
   .stat-float-3 { animation: float-gentle 4.5s ease-in-out 0.4s infinite; }
 
   /* ───────────────────────────────────────────
-     Hero solar system orbit animations
+     Terminal hero card
      ─────────────────────────────────────────── */
 
-  .hero-orbit-container {
+  .terminal-card {
     isolation: isolate;
   }
 
-  .hero-orbit-outer {
-    animation: orbit-pulse 6s ease-in-out infinite alternate;
+  .terminal-glow-border {
+    background: conic-gradient(
+      from 0deg,
+      rgb(var(--brand) / 0.4),
+      rgb(var(--accent) / 0.3),
+      rgb(var(--brand) / 0.1),
+      rgb(var(--accent) / 0.3),
+      rgb(var(--brand) / 0.4)
+    );
+    animation: terminal-border-spin 6s linear infinite;
+    filter: blur(2px);
   }
 
-  .hero-orbit-inner {
-    animation: orbit-pulse 8s ease-in-out infinite alternate-reverse;
+  .terminal-line {
+    opacity: 0;
+    animation: terminal-type 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
-  .hero-spin-slow {
-    animation: hero-orbit-spin 60s linear infinite;
-  }
-
-  .hero-spin-slow-reverse {
-    animation: hero-orbit-spin 60s linear infinite reverse;
-  }
-
-  .hero-spin-medium-reverse {
-    animation: hero-orbit-spin 40s linear infinite reverse;
-  }
-
-  .hero-spin-medium {
-    animation: hero-orbit-spin 40s linear infinite;
+  .terminal-cursor {
+    animation: cursor-blink 1s step-end infinite;
   }
 }
 
@@ -600,14 +598,19 @@ html[data-theme="light"] {
   50% { transform: translate(-50%, -50%) translateY(-10px) rotateX(2deg) rotateY(-2deg); }
 }
 
-@keyframes hero-orbit-spin {
+@keyframes terminal-border-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-@keyframes orbit-pulse {
-  from { opacity: 0.4; transform: translate(-50%, -50%) scale(0.98); }
-  to { opacity: 0.8; transform: translate(-50%, -50%) scale(1.02); }
+@keyframes terminal-type {
+  from { opacity: 0; transform: translateY(6px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* ───────────────────────────────────────────
