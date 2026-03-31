@@ -16,18 +16,18 @@ export function HeroAiVisual() {
   return (
     <div className="hero-enter hero-stagger-7">
       {/* Terminal window */}
-      <div className="surface-card terminal-card relative overflow-hidden rounded-[20px]">
+      <div className="terminal-card relative overflow-hidden rounded-[20px] border border-[#2a2e3a] bg-[#0d1117] shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
 
         {/* Animated border glow */}
         <div className="terminal-glow-border absolute -inset-px rounded-[20px] -z-10" />
 
         {/* Window bar */}
-        <div className="flex items-center gap-2 border-b border-white/[0.06] px-4 py-3">
-          <span className="h-2.5 w-2.5 rounded-full bg-brand/60" />
-          <span className="h-2.5 w-2.5 rounded-full bg-accent/60" />
-          <span className="h-2.5 w-2.5 rounded-full bg-brand/30" />
-          <span className="ml-3 flex-1 text-center text-[11px] tracking-wide text-muted/50">
-            career-highlights — zsh
+        <div className="flex items-center gap-2 border-b border-[#21262d] bg-[#161b22] px-4 py-2.5">
+          <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+          <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+          <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+          <span className="ml-3 flex-1 text-center font-mono text-[11px] text-[#484f58]">
+            ~/career-highlights — zsh
           </span>
         </div>
 
@@ -41,17 +41,17 @@ export function HeroAiVisual() {
             >
               {line.cmd && (
                 <>
-                  <span className={line.prefix === "$" ? "text-brand" : "text-muted/25"}>
+                  <span className={line.prefix === "$" ? "text-[#7ee787]" : "text-[#3b4048]"}>
                     {line.prefix}{line.prefix === "$" ? " " : "  "}
                   </span>
                   <span className={
                     line.highlight
-                      ? "text-brand"
+                      ? "text-[#ffa657]"
                       : line.accent
-                        ? "text-accent"
+                        ? "text-[#79c0ff]"
                         : line.muted
-                          ? "text-muted"
-                          : "text-ink/90"
+                          ? "text-[#8b949e]"
+                          : "text-[#e6edf3]"
                   }>
                     {line.cmd}
                   </span>
@@ -60,21 +60,21 @@ export function HeroAiVisual() {
             </div>
           ))}
           <div className="terminal-line mt-1" style={{ animationDelay: "3.2s" }}>
-            <span className="text-brand">$ </span>
-            <span className="terminal-cursor inline-block h-4 w-[2px] bg-brand align-middle" />
+            <span className="text-[#7ee787]">$ </span>
+            <span className="terminal-cursor inline-block h-4 w-[2px] bg-[#7ee787] align-middle" />
           </div>
         </div>
 
         {/* Bottom status bar */}
-        <div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-2.5 text-[11px]">
+        <div className="flex items-center justify-between border-t border-[#21262d] bg-[#161b22] px-5 py-2.5 font-mono text-[11px]">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-75" style={{ animation: "glow-pulse 2s ease-in-out infinite alternate" }} />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+              <span className="absolute inline-flex h-full w-full rounded-full bg-[#7ee787] opacity-75" style={{ animation: "glow-pulse 2s ease-in-out infinite alternate" }} />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7ee787]" />
             </span>
-            <span className="text-muted/60">Amazon · Seattle</span>
+            <span className="text-[#8b949e]">Amazon · Seattle</span>
           </div>
-          <span className="text-muted/40">SDE · 2022 — present</span>
+          <span className="text-[#484f58]">SDE · 2022 — present</span>
         </div>
       </div>
     </div>
