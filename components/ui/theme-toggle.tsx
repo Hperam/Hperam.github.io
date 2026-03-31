@@ -26,19 +26,10 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="theme-switch relative inline-flex h-11 w-[84px] items-center rounded-full border border-white/10 bg-white/5 p-1 text-muted shadow-panel backdrop-blur-xl transition hover:border-brand/40 active:scale-[0.98]"
-      aria-label="Toggle theme"
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full text-muted transition hover:bg-white/5 hover:text-ink active:scale-95"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      <span
-        className="theme-switch-thumb absolute top-1 grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-gradient-to-br from-white/95 to-white/80 text-slate-950 shadow-[0_12px_32px_rgba(15,23,42,0.22)] transition-[left] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
-        style={{ left: theme === "dark" ? 4 : 40 }}
-      >
-        {theme === "dark" ? <Moon size={16} /> : <SunMedium size={16} />}
-      </span>
-      <span className="flex w-full items-center justify-between px-3">
-        <Moon size={14} className="text-white/80" />
-        <SunMedium size={14} className="text-amber-300" />
-      </span>
+      {theme === "dark" ? <Moon size={16} /> : <SunMedium size={16} />}
     </button>
   );
 }
