@@ -23,7 +23,7 @@ const fontMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Harshith Sai Peram | Software Engineer",
   description:
-    "Software engineer building scalable, beautiful, intelligent products across distributed systems, AI, cloud, and full-stack engineering.",
+    "Software engineer focused on backend systems, full-stack delivery, AI product engineering, and cloud-native platforms.",
   metadataBase: new URL("https://hperam.github.io"),
   icons: {
     icon: "/favicon.svg"
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Harshith Sai Peram | Software Engineer",
     description:
-      "Recruiter-focused portfolio for a software engineer working across AI, product engineering, and high-scale systems.",
+      "Portfolio for a software engineer focused on backend systems, full-stack delivery, AI product engineering, and high-scale platforms.",
     type: "website",
     url: "https://hperam.github.io",
     images: [

@@ -1,20 +1,25 @@
-import { portfolio } from "@/data/portfolio";
-
-const orbitNodes = [
-  { label: "Signal Routing", left: "10%", top: "16%" },
-  { label: "Ranking", left: "76%", top: "14%" },
-  { label: "Narrative", left: "84%", top: "44%" },
-  { label: "Reliability", left: "66%", top: "78%" },
-  { label: "Inference", left: "17%", top: "74%" },
-  { label: "Product Taste", left: "4%", top: "48%" }
+const floatingPanels = [
+  {
+    title: "Backend systems",
+    copy: "High-scale thinking packaged in a clear visual surface.",
+    className: "left-2 top-10 w-48 lg:left-0"
+  },
+  {
+    title: "AI systems",
+    copy: "Grounded flows, operational context, and faster decision loops.",
+    className: "right-2 top-14 w-52 lg:right-0"
+  },
+  {
+    title: "Execution quality",
+    copy: "Systems that look sharp, move well, and communicate clearly.",
+    className: "bottom-8 left-8 w-56"
+  }
 ];
 
-const streamLabels = [
-  "Context ingestion",
-  "Decision framing",
-  "UI narrative",
-  "Signal quality",
-  "Runtime polish"
+const dataRows = [
+  { label: "Platform", value: "Forecasting + simulations" },
+  { label: "AI", value: "Grounded product workflows" },
+  { label: "Full-stack", value: "APIs + shipped user flows" }
 ];
 
 export function HeroAiVisual() {
@@ -37,7 +42,7 @@ export function HeroAiVisual() {
       <div className="relative h-full min-h-[528px]">
         {/* Pulsing center glow (CSS-only) */}
         <div
-          className="absolute left-1/2 top-[49%] h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute left-1/2 top-[48%] h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background:
               "radial-gradient(circle, rgb(var(--brand) / 0.22) 0%, rgb(var(--accent) / 0.08) 40%, transparent 68%)",
@@ -48,64 +53,64 @@ export function HeroAiVisual() {
 
         {/* Orbit rings (CSS rotation) */}
         <div
-          className="orbit-ring absolute left-1/2 top-[49%] h-[430px] w-[430px] rounded-full border border-white/10"
+          className="orbit-ring absolute left-1/2 top-[48%] h-[408px] w-[408px] rounded-full border border-white/10"
           style={{ transformOrigin: "center" }}
         />
         <div
-          className="orbit-ring-reverse absolute left-1/2 top-[49%] h-[300px] w-[300px] rounded-full border"
+          className="orbit-ring-reverse absolute left-1/2 top-[48%] h-[276px] w-[276px] rounded-full border"
           style={{ borderColor: "rgb(var(--brand) / 0.22)", transformOrigin: "center" }}
         />
 
-        {/* Orbit node labels (CSS float) */}
-        {orbitNodes.map((node, index) => (
+        {/* Floating panels (CSS float) */}
+        {floatingPanels.map((panel, index) => (
           <div
-            key={node.label}
-            className={`absolute float-node float-node-${index + 1}`}
-            style={{ left: node.left, top: node.top }}
+            key={panel.title}
+            className={`absolute float-node float-node-${index + 1} ${panel.className} rounded-[26px] border border-white/10 bg-black/28 p-4 shadow-panel backdrop-blur-xl`}
           >
-            <div className="rounded-full border border-white/10 bg-black/30 px-3 py-2 text-[11px] uppercase tracking-[0.28em] text-ink shadow-panel backdrop-blur-xl">
-              {node.label}
-            </div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-brand">
+              {panel.title}
+            </p>
+            <p className="mt-3 text-sm leading-6 text-ink/80">{panel.copy}</p>
           </div>
         ))}
 
         {/* Central card (CSS float) */}
         <div
-          className="hero-card-float absolute left-1/2 top-[49%] w-[min(90%,340px)] rounded-[32px] border border-white/10 bg-black/35 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+          className="hero-card-float absolute left-1/2 top-[48%] w-[min(90%,360px)] rounded-[32px] border border-white/10 bg-black/35 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
           style={{ transformStyle: "preserve-3d" }}
         >
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-[11px] uppercase tracking-[0.3em] text-muted">
-                Interactive system map
+                Engineering command layer
               </p>
               <h3 className="mt-2 font-display text-3xl tracking-[-0.06em] text-ink">
-                AI-native engineering
+                Modern software systems
               </h3>
             </div>
             <div className="hero-core-badge">LIVE</div>
           </div>
 
           <p className="mt-4 max-w-sm text-sm leading-7 text-ink/74">
-            Not a headshot card. A motion system that signals backend depth, product
-            taste, and modern AI fluency at first glance.
+            A cleaner hero graphic built to signal platform depth, AI fluency, and
+            end-to-end engineering range without turning the page into a GPU stress test.
           </p>
 
           {/* Stream rows with CSS sweep */}
           <div className="mt-6 space-y-3">
-            {streamLabels.map((label, row) => (
+            {dataRows.map((row, index) => (
               <div
-                key={label}
+                key={row.label}
                 className="relative h-11 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]"
               >
                 <div
-                  className={`stream-sweep absolute inset-y-0 left-[-28%] w-[52%] rounded-full blur-xl stream-sweep-${row + 1}`}
+                  className={`stream-sweep absolute inset-y-0 left-[-28%] w-[52%] rounded-full blur-xl stream-sweep-${index + 1}`}
                 />
                 <div className="absolute inset-0 flex items-center justify-between px-4">
                   <span className="text-[11px] uppercase tracking-[0.24em] text-muted">
-                    Layer 0{row + 1}
+                    {row.label}
                   </span>
-                  <span className="text-sm text-ink/75">{label}</span>
+                  <span className="text-sm text-ink/75">{row.value}</span>
                 </div>
               </div>
             ))}
@@ -113,7 +118,11 @@ export function HeroAiVisual() {
 
           {/* Stats */}
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            {portfolio.stats.slice(0, 3).map((stat, index) => (
+            {[
+              { label: "Years", value: "5+" },
+              { label: "Savings", value: "$2M" },
+              { label: "Fallback", value: "<0.1%" }
+            ].map((stat, index) => (
               <div
                 key={stat.label}
                 className={`stat-float-${index + 1} rounded-[22px] border border-white/10 bg-white/[0.05] px-4 py-4`}

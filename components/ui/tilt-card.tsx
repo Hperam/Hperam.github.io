@@ -17,8 +17,8 @@ export function TiltCard({ children, className }: TiltCardProps) {
     if (!node) return;
 
     const rect = node.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -8;
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 4;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -4;
 
     node.style.setProperty("--glare-x", `${((event.clientX - rect.left) / rect.width) * 100}%`);
     node.style.setProperty("--glare-y", `${((event.clientY - rect.top) / rect.height) * 100}%`);

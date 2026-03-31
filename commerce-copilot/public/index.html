@@ -7,7 +7,7 @@
     <title>Commerce Copilot</title>
     <meta
       name="description"
-      content="Multimodal commerce assistant with text, voice, and image input plus grounded product recommendations."
+      content="A multimodal commerce assistant with grounded catalog retrieval, structured AI recommendations, and secure session-scoped API usage."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -17,64 +17,114 @@
         <div class="brand-lockup">
           <div class="brand-mark">CC</div>
           <div>
-            <p class="eyebrow">Multimodal Product</p>
+            <p class="eyebrow">Portfolio product demo</p>
             <h1>Commerce Copilot</h1>
           </div>
         </div>
-        <a
-          class="text-link"
-          href="https://hperam.github.io"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Back to portfolio
-        </a>
+        <div class="topbar-actions">
+          <button id="openArchitectureTop" class="secondary-button" type="button">
+            View architecture
+          </button>
+          <a
+            class="text-link"
+            href="https://hperam.github.io"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Back to portfolio
+          </a>
+        </div>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-copy">
-            <p class="eyebrow">Grounded shopping assistant</p>
+            <p class="eyebrow">Multimodal commerce intelligence</p>
             <h2>
-              Ask with text. Talk with voice.
-              <span>Upload an image for style-aware recommendations.</span>
+              Product discovery that starts with grounded catalog retrieval
+              <span>then layers explainable AI reasoning on top.</span>
             </h2>
             <p class="hero-text">
-              Commerce Copilot blends local catalog retrieval with OpenAI-powered
-              reasoning so recommendations stay grounded in real product
-              metadata instead of vague chatbot guesses.
+              Commerce Copilot is a client-first portfolio project for multimodal shopping
+              discovery. Users can search by text, voice, or image, review ranked
+              catalog candidates, and optionally unlock structured recommendations with
+              their own OpenAI API key for the current browser session only.
             </p>
+
+            <div class="pipeline-strip">
+              <span class="pipeline-chip" data-pipeline-step="input">Input</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-chip" data-pipeline-step="retrieval">Retrieval</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-chip" data-pipeline-step="grounded">Grounded candidates</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-chip" data-pipeline-step="reasoning">AI reasoning</span>
+              <span class="pipeline-arrow">→</span>
+              <span class="pipeline-chip" data-pipeline-step="summary">Share summary</span>
+            </div>
+
             <div class="hero-actions">
               <button
                 class="pill-button"
-                data-sample="I need premium noise-canceling headphones for long flights under $400."
+                data-sample="Find me a minimalist desk lamp under $80 for a clean WFH setup."
               >
-                Try travel audio
+                Try desk lamp
               </button>
               <button
                 class="pill-button"
-                data-sample="Find a laptop for coding and video editing with strong battery life under $1800."
+                data-sample="Show travel backpacks good for 3-day trips with a laptop compartment."
               >
-                Try creator laptop
+                Try travel bag
               </button>
               <button
                 class="pill-button"
-                data-sample="Recommend a desk setup for software engineering and multitasking."
+                data-sample="Upload a sneaker photo and help me find similar premium everyday shoes."
               >
-                Try desk setup
+                Try image search
               </button>
+            </div>
+
+            <div class="demo-highlights">
+              <article class="demo-card">
+                <p class="eyebrow">What this shows</p>
+                <p>
+                  Backend-integrated product engineering with a static-hosted, client-first
+                  commerce demo.
+                </p>
+              </article>
+              <article class="demo-card">
+                <p class="eyebrow">Why it is credible</p>
+                <p>
+                  Recommendations are grounded in real catalog candidates before any model
+                  reasoning is applied.
+                </p>
+              </article>
+              <article class="demo-card">
+                <p class="eyebrow">Why the key flow matters</p>
+                <p>
+                  AI is opt-in, session-scoped, and clearly framed so the experience stays
+                  transparent and honest.
+                </p>
+              </article>
             </div>
           </div>
 
-          <div class="hero-panel">
-            <div class="status-card">
-              <p class="eyebrow">Session security</p>
-              <div id="healthBanner" class="health-banner">
+          <aside class="hero-panel">
+            <section class="status-card">
+              <div class="section-head">
+                <div>
+                  <p class="eyebrow">API key gate</p>
+                  <h3>Unlock AI for this tab only</h3>
+                </div>
+                <span id="sessionModeBadge" class="mode-pill">Catalog mode</span>
+              </div>
+
+              <div id="sessionBanner" class="session-banner">
                 Loading session state...
               </div>
 
               <div class="api-key-panel">
-                <label class="label" for="apiKeyInput">OpenAI API key for this tab only</label>
+                <label class="label" for="apiKeyInput">OpenAI API key for this live session</label>
                 <input
                   id="apiKeyInput"
                   class="api-key-input"
@@ -86,100 +136,173 @@
                 />
                 <div class="api-key-actions">
                   <button id="saveKeyButton" class="primary-button" type="button">
-                    Use key in this tab
+                    Enable AI features
                   </button>
                   <button id="clearKeyButton" class="secondary-button" type="button">
-                    Forget key
+                    Clear session
                   </button>
                 </div>
                 <p id="sessionKeyStatus" class="security-note">
-                  No key loaded for this tab yet.
+                  Your API key is used only for this live session in your browser and is
+                  not saved by this demo.
                 </p>
               </div>
 
-              <ul class="status-list">
-                <li>Key stored only in session storage for the current tab session</li>
-                <li>Key is never committed, logged, or sent to your portfolio host</li>
-                <li>Requests go directly to OpenAI over HTTPS only when you click Generate</li>
-                <li>Without a key, the app falls back to catalog-grounded local mode</li>
-              </ul>
-            </div>
-          </div>
+              <div class="trust-grid">
+                <article class="trust-card">
+                  <p class="trust-label">Hosting</p>
+                  <p>Static GitHub Pages deployment with client-first orchestration.</p>
+                </article>
+                <article class="trust-card">
+                  <p class="trust-label">Fallback</p>
+                  <p>Catalog search and ranking stay usable even if AI is locked.</p>
+                </article>
+                <article class="trust-card">
+                  <p class="trust-label">Security model</p>
+                  <p>No backend storage, no fake guarantees, and a visible clear-session action.</p>
+                </article>
+              </div>
+            </section>
+          </aside>
         </section>
 
         <section class="workspace">
-          <section class="composer card">
-            <div class="card-header">
-              <div>
-                <p class="eyebrow">Ask for anything</p>
-                <h3>Shopping request</h3>
-              </div>
-              <button id="voiceButton" class="secondary-button" type="button">
-                Start voice input
-              </button>
-            </div>
-
-            <form id="recommendationForm" class="composer-form">
-              <label class="label" for="queryInput">Describe what you want</label>
-              <textarea
-                id="queryInput"
-                name="query"
-                rows="5"
-                placeholder="Example: I want a compact camera or phone with great travel photography, strong battery life, and premium design."
-                required
-              ></textarea>
-
-              <div class="form-grid">
-                <div>
-                  <label class="label" for="budgetInput">Budget cap</label>
-                  <select id="budgetInput" name="budgetMax">
-                    <option value="">No budget cap</option>
-                    <option value="200">Under $200</option>
-                    <option value="400">Under $400</option>
-                    <option value="800">Under $800</option>
-                    <option value="1200">Under $1200</option>
-                    <option value="1800">Under $1800</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="label" for="imageInput">Reference image</label>
-                  <input id="imageInput" name="image" type="file" accept="image/*" />
-                </div>
-              </div>
-
-              <div>
-                <p class="label">Preferred categories</p>
-                <div id="categoryChips" class="chip-group"></div>
-              </div>
-
-              <div id="imagePreview" class="image-preview hidden">
-                <img id="previewImage" alt="Uploaded preview" />
-                <div class="preview-copy">
-                  <strong id="previewName"></strong>
-                  <button id="clearImageButton" class="ghost-button" type="button">
-                    Remove image
-                  </button>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button id="submitButton" class="primary-button" type="submit">
-                  Get recommendations
-                </button>
-                <p class="form-note">
-                  AI mode is opt-in per tab. If you do not load a key, the app
-                  still runs in a fully local catalog-grounded mode.
-                </p>
-              </div>
-            </form>
-          </section>
-
-          <section class="results-column">
-            <section id="resultsCard" class="card results-card">
+          <div class="workspace-main">
+            <section class="card composer-card">
               <div class="card-header">
                 <div>
-                  <p class="eyebrow">Recommendations</p>
-                  <h3>Your next shortlist</h3>
+                  <p class="eyebrow">Step 1</p>
+                  <h3>Choose an input mode and describe intent</h3>
+                </div>
+                <div class="mode-switcher" role="tablist" aria-label="Input modes">
+                  <button class="mode-tab is-active" data-mode="text" type="button">Text</button>
+                  <button class="mode-tab" data-mode="voice" type="button">Voice</button>
+                  <button class="mode-tab" data-mode="image" type="button">Image</button>
+                </div>
+              </div>
+
+              <div id="modeHelper" class="mode-helper">
+                Type a request and Commerce Copilot will translate it into a grounded retrieval intent.
+              </div>
+
+              <form id="recommendationForm" class="composer-form">
+                <label class="label" for="queryInput">Shopping request</label>
+                <textarea
+                  id="queryInput"
+                  name="query"
+                  rows="5"
+                  placeholder="Example: Find me a minimalist desk lamp under $80 for a clean work setup."
+                ></textarea>
+
+                <div class="form-grid">
+                  <div>
+                    <label class="label" for="budgetInput">Budget cap</label>
+                    <select id="budgetInput" name="budgetMax">
+                      <option value="">No budget cap</option>
+                      <option value="80">Under $80</option>
+                      <option value="150">Under $150</option>
+                      <option value="250">Under $250</option>
+                      <option value="400">Under $400</option>
+                      <option value="800">Under $800</option>
+                      <option value="1800">Under $1800</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="label" for="imageInput">Reference image</label>
+                    <input id="imageInput" name="image" type="file" accept="image/*" />
+                  </div>
+                </div>
+
+                <div class="mode-panel-group">
+                  <section class="mode-panel" data-mode-panel="text">
+                    <p class="mode-panel-title">Text mode</p>
+                    <p class="mode-panel-copy">
+                      Best for direct requests with budget, category, style, or quality constraints.
+                    </p>
+                  </section>
+
+                  <section class="mode-panel hidden" data-mode-panel="voice">
+                    <div class="voice-panel-header">
+                      <div>
+                        <p class="mode-panel-title">Voice capture</p>
+                        <p class="mode-panel-copy">
+                          Dictate naturally, then refine with text before retrieval.
+                        </p>
+                      </div>
+                      <button id="voiceButton" class="secondary-button" type="button">
+                        Start voice input
+                      </button>
+                    </div>
+                    <div id="voiceTranscript" class="voice-transcript">
+                      No transcript captured yet.
+                    </div>
+                  </section>
+
+                  <section class="mode-panel hidden" data-mode-panel="image">
+                    <p class="mode-panel-title">Image mode</p>
+                    <p class="mode-panel-copy">
+                      Upload a reference image and pair it with a short request like “find similar”
+                      or “same style but cheaper.”
+                    </p>
+                  </section>
+                </div>
+
+                <div>
+                  <p class="label">Preferred categories</p>
+                  <div id="categoryChips" class="chip-group"></div>
+                </div>
+
+                <div id="imagePreview" class="image-preview hidden">
+                  <img id="previewImage" alt="Uploaded preview" />
+                  <div class="preview-copy">
+                    <div>
+                      <strong id="previewName"></strong>
+                      <p class="preview-note">
+                        Image stays in browser memory for this tab session unless you remove it.
+                      </p>
+                    </div>
+                    <button id="clearImageButton" class="ghost-button" type="button">
+                      Remove image
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-actions">
+                  <button id="submitButton" class="primary-button" type="submit">
+                    Run retrieval pipeline
+                  </button>
+                  <p class="form-note">
+                    Grounded catalog results work without a key. AI reasoning unlocks only when
+                    you enable a session key for this tab.
+                  </p>
+                </div>
+              </form>
+            </section>
+
+            <section class="card">
+              <div class="card-header">
+                <div>
+                  <p class="eyebrow">Step 2</p>
+                  <h3>Ranked grounded candidates</h3>
+                </div>
+                <span class="grounded-pill">Catalog-grounded</span>
+              </div>
+              <div id="retrievalMeta" class="retrieval-meta">
+                Search the catalog to see ranked candidates, relevance signals, and match reasons.
+              </div>
+              <div id="candidateState" class="empty-state">
+                Start with text, voice, or image input to generate a grounded candidate shortlist.
+              </div>
+              <div id="candidateGrid" class="candidate-grid hidden"></div>
+            </section>
+          </div>
+
+          <aside class="workspace-side">
+            <section id="resultsCard" class="card recommendation-shell">
+              <div class="card-header">
+                <div>
+                  <p class="eyebrow">Step 3</p>
+                  <h3>Recommendation panel</h3>
                 </div>
                 <button
                   id="copySummaryButton"
@@ -190,25 +313,113 @@
                   Copy summary
                 </button>
               </div>
-              <div id="resultsState" class="empty-state">
-                Run a query to see grounded recommendations, tradeoffs, and a
-                shareable summary card.
+              <div id="recommendationState" class="empty-state">
+                The AI panel will stay in a locked preview state until you provide a session key.
+                You can still run catalog retrieval right now.
               </div>
-              <div id="resultsContent" class="results-content hidden"></div>
+              <div id="recommendationContent" class="results-content hidden"></div>
             </section>
-          </section>
-        </section>
 
-        <section class="catalog-section">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Grounding catalog</p>
-              <h3>Products available to the copilot</h3>
-            </div>
-          </div>
-          <div id="catalogGrid" class="catalog-grid"></div>
+            <section class="card architecture-preview">
+              <div class="card-header">
+                <div>
+                  <p class="eyebrow">System framing</p>
+                  <h3>Why this architecture fits GitHub Pages</h3>
+                </div>
+                <button id="openArchitectureWorkspace" class="ghost-button" type="button">
+                  Open full view
+                </button>
+              </div>
+              <div class="architecture-mini-grid">
+                <article>
+                  <span>1</span>
+                  <p>Capture multimodal input in the browser.</p>
+                </article>
+                <article>
+                  <span>2</span>
+                  <p>Retrieve grounded products from a local catalog.</p>
+                </article>
+                <article>
+                  <span>3</span>
+                  <p>Use OpenAI only after the user enables a session key.</p>
+                </article>
+                <article>
+                  <span>4</span>
+                  <p>Render structured picks, tradeoffs, and a share-ready summary.</p>
+                </article>
+              </div>
+            </section>
+          </aside>
         </section>
       </main>
+    </div>
+
+    <div id="architectureModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal="true"></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="architectureTitle">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Architecture</p>
+            <h3 id="architectureTitle">Static-hosted, grounded, and session-scoped by design</h3>
+          </div>
+          <button id="closeArchitecture" class="secondary-button" type="button">
+            Close
+          </button>
+        </div>
+
+        <div class="architecture-flow">
+          <div class="architecture-node">
+            <span>Input</span>
+            <p>Text, voice transcript, and image upload are captured in-browser.</p>
+          </div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-node">
+            <span>Retrieval</span>
+            <p>Catalog candidates are filtered and ranked locally using query, tags, and budget signals.</p>
+          </div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-node">
+            <span>AI reasoning</span>
+            <p>Only the top grounded candidates and user intent are sent to OpenAI after the user enables a session key.</p>
+          </div>
+          <div class="architecture-arrow">→</div>
+          <div class="architecture-node">
+            <span>Output</span>
+            <p>Structured picks, tradeoffs, confidence notes, and a share summary are rendered in the client.</p>
+          </div>
+        </div>
+
+        <div class="architecture-grid">
+          <article class="architecture-card">
+            <h4>Hosting model</h4>
+            <p>
+              Built for GitHub Pages static export. No required backend for the demo path,
+              which keeps the experience easy to inspect and deploy.
+            </p>
+          </article>
+          <article class="architecture-card">
+            <h4>Grounding model</h4>
+            <p>
+              Retrieval happens before recommendation. The AI layer is constrained to reason
+              only over ranked catalog candidates instead of inventing products.
+            </p>
+          </article>
+          <article class="architecture-card">
+            <h4>Session security</h4>
+            <p>
+              The OpenAI key is user-supplied, stored only in session scope for the current
+              tab, and removable at any time with a clear-session control.
+            </p>
+          </article>
+          <article class="architecture-card">
+            <h4>Portfolio signal</h4>
+            <p>
+              The demo showcases full-stack product thinking: interaction design, retrieval
+              logic, AI orchestration, explainability, and honest UX around security limits.
+            </p>
+          </article>
+        </div>
+      </div>
     </div>
 
     <script src="./app.js" type="module"></script>
