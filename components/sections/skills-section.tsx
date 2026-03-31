@@ -63,7 +63,7 @@ export function SkillsSection() {
                         <span className="text-[#3b4048] text-[10px] w-3">
                           {isOpen ? "▾" : "▸"}
                         </span>
-                        <span className="text-[#79c0ff]">
+                        <span className="text-brand">
                           {group.title.toLowerCase().replace(/ \/ /g, "_").replace(/ /g, "_")}
                         </span>
                         <span className="text-[#6e7681]">:</span>
