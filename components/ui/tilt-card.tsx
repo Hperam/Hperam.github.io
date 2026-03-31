@@ -1,24 +1,20 @@
 "use client";
 
 import clsx from "clsx";
-import { motion } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
 import type { ReactNode } from "react";
 import { useRef } from "react";
 
 type TiltCardProps = {
   children: ReactNode;
   className?: string;
-} & Omit<HTMLMotionProps<"div">, "children" | "className">;
+};
 
-export function TiltCard({ children, className, ...rest }: TiltCardProps) {
+export function TiltCard({ children, className }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const node = ref.current;
-    if (!node) {
-      return;
-    }
+    if (!node) return;
 
     const rect = node.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
@@ -30,30 +26,24 @@ export function TiltCard({ children, className, ...rest }: TiltCardProps) {
   };
 
   const reset = () => {
-    if (!ref.current) {
-      return;
-    }
-
-    ref.current.style.transform =
-      "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+    if (!ref.current) return;
+    ref.current.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)";
     ref.current.style.setProperty("--glare-x", "50%");
     ref.current.style.setProperty("--glare-y", "50%");
   };
 
   return (
-    <motion.div
+    <div
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={reset}
-      whileHover={{ y: -4, scale: 1.01 }}
       className={clsx(
-        "tilt-card relative overflow-hidden transition-transform duration-300 will-change-transform",
+        "tilt-card relative overflow-hidden transition-transform duration-300 will-change-transform hover:-translate-y-1",
         className
       )}
-      {...rest}
     >
       <span className="tilt-card-glare" />
       {children}
-    </motion.div>
+    </div>
   );
 }
