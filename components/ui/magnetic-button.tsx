@@ -31,7 +31,7 @@ export function MagneticButton({
     const offsetX = event.clientX - (bounds.left + bounds.width / 2);
     const offsetY = event.clientY - (bounds.top + bounds.height / 2);
 
-    node.style.transform = `translate(${offsetX * 0.12}px, ${offsetY * 0.12}px)`;
+    node.style.transform = `translate(${offsetX * 0.06}px, ${offsetY * 0.06}px)`;
   };
 
   const reset = () => {
@@ -53,9 +53,9 @@ export function MagneticButton({
         variant === "primary" &&
           "border border-white/20 bg-brand/90 text-white shadow-glow hover:bg-brand",
         variant === "secondary" &&
-          "border border-white/10 bg-white/5 text-white hover:border-brand/50 hover:bg-brand/10",
+          "border border-white/10 bg-white/5 text-ink hover:border-brand/50 hover:bg-brand/10",
         variant === "ghost" &&
-          "border border-white/10 bg-transparent text-muted hover:border-white/20 hover:text-white",
+          "border border-white/10 bg-transparent text-muted hover:border-white/20 hover:text-ink",
         className
       )}
     >

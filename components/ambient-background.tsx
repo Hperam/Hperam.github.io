@@ -23,7 +23,7 @@ export function AmbientBackground() {
         }}
       />
 
-      {/* 3 CSS-animated orbs (replaces 22 JS-animated elements) */}
+      {/* 3 CSS-animated orbs */}
       <div
         className="absolute left-[10%] top-[12%] h-64 w-64 rounded-full bg-brand/20 blur-3xl will-change-transform"
         style={{ animation: "float-orb-1 14s ease-in-out infinite" }}

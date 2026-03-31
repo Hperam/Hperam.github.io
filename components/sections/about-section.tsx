@@ -9,7 +9,7 @@ export function AboutSection() {
         <Reveal className="max-w-3xl">
           <p className="section-label">About</p>
           <h2 className="section-heading">
-            Technical depth with a product eye for what feels premium.
+            Backend-first engineering with full-stack ownership when the product needs it.
           </h2>
           <p className="section-copy">{portfolio.about}</p>
         </Reveal>
@@ -32,6 +32,17 @@ export function AboutSection() {
           </Reveal>
 
           <Reveal className="grid gap-4">
+            <TiltCard className="rounded-[28px] border border-brand/20 bg-gradient-to-br from-brand/18 via-white/[0.06] to-accent/12 p-6 shadow-glow">
+              <p className="text-sm uppercase tracking-[0.24em] text-brand">
+                Impact Highlight
+              </p>
+              <p className="mt-4 text-4xl font-semibold tracking-[-0.06em] text-ink">
+                $2M
+              </p>
+              <p className="mt-3 text-lg leading-8 text-ink/90">
+                in annual savings unlocked through rollout safety, simulation quality, and production improvements at Amazon.
+              </p>
+            </TiltCard>
             {portfolio.metrics.map((metric) => (
               <TiltCard
                 key={metric.label}

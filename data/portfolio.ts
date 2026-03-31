@@ -1,15 +1,15 @@
 export const portfolio = {
   name: "Harshith Sai Peram",
-  title: "Software Engineer building scalable, beautiful, intelligent products",
+  title: "Software Engineer focused on backend, full-stack, and intelligent systems",
   location: "Seattle, WA",
-  email: "harshithsai98@gmail.com",
+  email: "harshith18sai@gmail.com",
   socials: [
     { label: "GitHub", href: "https://github.com/Hperam" },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/"
     },
-    { label: "Email", href: "mailto:harshithsai98@gmail.com" }
+    { label: "Email", href: "mailto:harshith18sai@gmail.com" }
   ],
   nav: [
     { id: "hero", label: "Home" },
@@ -17,11 +17,10 @@ export const portfolio = {
     { id: "skills", label: "Stack" },
     { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
-    { id: "credibility", label: "Credibility" },
     { id: "contact", label: "Contact" }
   ],
   intro:
-    "Former Amazon engineer focused on high-scale systems, AI-forward product experiences, and cloud-native data platforms. I care about technical depth, product taste, and execution quality in equal measure.",
+    "Amazon engineer focused on backend platforms, full-stack delivery, and cloud-native systems at scale. I care about reliable architecture, strong execution, and building software that holds up in production.",
   stats: [
     { label: "Years Building", value: "5+" },
     { label: "Annual Savings", value: "$2M" },
@@ -30,28 +29,28 @@ export const portfolio = {
   ],
   spotlight: [
     "Distributed systems",
-    "AI product engineering",
+    "Backend engineering",
     "Data platforms",
-    "Frontend craft",
+    "Full-stack delivery",
     "Cloud architecture",
-    "Product-minded delivery"
+    "Production reliability"
   ],
   about:
-    "I build systems that have to be trusted: planning platforms, production migrations, customer-facing applications, and intelligent interfaces. My edge is pairing engineering rigor with strong UI and product instincts so the software feels as good as it performs.",
+    "I build systems that have to be trusted: planning platforms, production migrations, service-backed applications, and AI-assisted workflows. My strength is pairing backend rigor with full-stack ownership so the product works reliably end to end.",
   aboutPoints: [
     "Built and operated large-scale simulation workflows at Amazon for forecasting and operational planning.",
     "Delivered full-stack commerce systems at Flipkart using React, Node.js, MongoDB, Docker, and AWS.",
-    "Comfortable across backend design, cloud systems, data pipelines, and polished product surfaces."
+    "Comfortable across backend services, cloud systems, data pipelines, APIs, and pragmatic frontend implementation when needed."
   ],
   metrics: [
     { label: "Production systems", detail: "Platform, simulation, and operational tooling" },
-    { label: "Customer products", detail: "Commerce flows, auth, and responsive UIs" },
+    { label: "Full-stack ownership", detail: "Commerce flows, APIs, auth, and shipped user experiences" },
     { label: "Cloud depth", detail: "AWS services, observability, delivery, and rollout safety" }
   ],
   skillGroups: [
     {
-      title: "Frontend",
-      items: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion", "UX Systems"]
+      title: "Full-Stack",
+      items: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion", "App Architecture"]
     },
     {
       title: "Backend",
@@ -78,32 +77,21 @@ export const portfolio = {
     {
       title: "Commerce Copilot",
       status: "Live demo",
-      impact: "Multimodal discovery, grounded recommendations, and session-scoped AI access",
+      impact: "Multimodal discovery, grounded retrieval, and explainable AI recommendations",
       summary:
-        "A polished commerce assistant that supports text, voice, and image input, ranks grounded catalog candidates first, and then generates structured AI recommendations with tradeoffs and share-ready summaries.",
-      tech: ["Next.js portfolio integration", "OpenAI", "Node.js", "Express", "Browser voice input", "Session-only key flow"],
-      role: "Product engineering, full-stack architecture, AI interaction design",
+        "A multimodal commerce assistant that combines catalog-grounded retrieval with structured AI recommendations. Users can search by text, voice, or image, review ranked candidates, and generate explainable product picks with tradeoff summaries.",
+      tech: ["Static GitHub Pages demo", "OpenAI", "Catalog ranking", "Browser voice input", "Image upload", "Session-only key flow"],
+      role: "Client-first product engineering, full-stack architecture thinking, AI interaction design",
       result:
-        "Demonstrates end-to-end product taste: recruiter-friendly presentation, real code, live demo access, and secure tab-scoped API usage.",
+        "Demonstrates end-to-end product engineering, secure session-scoped API usage, grounded recommendation design, and strong UI judgment inside a static-hosted environment.",
       links: [
-        { label: "Open Demo", href: "/commerce-copilot/" },
+        { label: "Open Live Demo", href: "/commerce-copilot/" },
+        { label: "View Architecture", href: "/commerce-copilot/public/index.html#architecture" },
         {
           label: "View Source",
           href: "https://github.com/Hperam/Hperam.github.io/tree/main/commerce-copilot"
         }
       ]
-    },
-    {
-      title: "ScenarioOps AI",
-      status: "Flagship concept",
-      impact: "Decision systems for operations teams with explainable what-if planning",
-      summary:
-        "An AI-assisted planning workspace that combines scenario simulation, forecast evaluation, and natural-language explanation so operations teams can understand why a recommendation changed.",
-      tech: ["Python", "Spark", "AWS", "Evaluation", "Data contracts", "Product analytics"],
-      role: "Systems design, data quality architecture, decision tooling",
-      result:
-        "Translates prior Amazon-scale planning work into a differentiated, senior-level case study.",
-      links: []
     },
     {
       title: "Runbook Agent",
@@ -114,7 +102,7 @@ export const portfolio = {
       tech: ["OpenAI", "CloudWatch", "FastAPI", "Telemetry", "RAG", "Guardrails"],
       role: "Platform product thinking, observability-first AI systems",
       result:
-        "Signals backend depth, operational empathy, and modern AI product judgment.",
+        "Signals backend depth, operational empathy, and strong judgment around modern AI systems.",
       links: []
     }
   ],
@@ -122,7 +110,7 @@ export const portfolio = {
     {
       company: "Amazon",
       role: "Software Engineer",
-      duration: "2022 - 2026",
+      duration: "2022 - Present",
       highlight:
         "Built large-scale fulfillment simulations and supporting data pipelines for demand forecasting and staffing decisions.",
       bullets: [
@@ -138,7 +126,7 @@ export const portfolio = {
       highlight:
         "Delivered responsive commerce experiences with React, Node.js, MongoDB, Docker, Terraform, and AWS.",
       bullets: [
-        "Built React interfaces and reusable frontend systems for smoother navigation and engagement.",
+        "Built React interfaces where needed while owning the underlying service and commerce workflow integration.",
         "Developed APIs for listings, auth, orders, and checkout workflows.",
         "Owned secure access patterns and cloud deployment setup."
       ]
@@ -156,26 +144,4 @@ export const portfolio = {
       ]
     }
   ],
-  credibility: {
-    logos: ["Amazon", "Flipkart", "University at Buffalo", "AWS", "OpenAI"],
-    testimonials: [
-      {
-        quote:
-          "References and written recommendations available on request for hiring teams.",
-        author: "Recommendation Placeholder",
-        title: "Manager / Teammate reference"
-      },
-      {
-        quote:
-          "Portfolio designed to showcase both engineering depth and product taste, not just a list of technologies.",
-        author: "Engineering Narrative",
-        title: "Recruiter-facing positioning"
-      }
-    ],
-    achievements: [
-      "Built systems for operational planning at Amazon scale",
-      "Strong full-stack foundation from Flipkart commerce delivery",
-      "Open to backend, platform, AI product, and full-stack SDE 2 roles"
-    ]
-  }
 };
