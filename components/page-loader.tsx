@@ -50,7 +50,34 @@ export function PageLoader() {
               boxShadow: "0 0 40px rgb(var(--brand) / 0.2), 0 0 80px rgb(var(--accent) / 0.1)"
             }}
           >
-            <span className="font-display text-2xl font-bold tracking-[-0.06em] text-ink">HP</span>
+            <svg viewBox="0 0 64 64" className="h-10 w-10" fill="none">
+              {/* H */}
+              <path
+                d="M12 16v32M12 32h14M26 16v32"
+                stroke="rgb(var(--ink))"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="loader-letter"
+                style={{ strokeDasharray: 96, strokeDashoffset: 96, animation: "loader-draw 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s forwards" }}
+              />
+              {/* P */}
+              <path
+                d="M38 48V16h10a8 8 0 010 16H38"
+                stroke="url(#hp-gradient)"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="loader-letter"
+                style={{ strokeDasharray: 80, strokeDashoffset: 80, animation: "loader-draw 0.8s cubic-bezier(0.22,1,0.36,1) 0.4s forwards" }}
+              />
+              <defs>
+                <linearGradient id="hp-gradient" x1="38" y1="16" x2="56" y2="48">
+                  <stop stopColor="rgb(var(--brand))" />
+                  <stop offset="1" stopColor="rgb(var(--accent))" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
         </div>
 
