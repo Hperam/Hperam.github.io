@@ -19,12 +19,12 @@ export function SkillsSection() {
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {portfolio.skillGroups.map((group, index) => (
-            <Reveal key={group.title} delay={index * 0.04}>
-              <TiltCard className="skill-card">
+            <Reveal key={group.title} delay={index * 0.04} className="h-full">
+              <TiltCard className="skill-card flex h-full flex-col">
                 <p className="text-sm uppercase tracking-[0.26em] text-brand">
                   {group.title}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-1 flex-wrap content-start gap-3">
                   {group.items.map((item) => (
                     <span key={item} className="skill-pill">
                       {item}
