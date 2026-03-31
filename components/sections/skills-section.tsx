@@ -9,11 +9,11 @@ export function SkillsSection() {
         <Reveal className="max-w-3xl">
           <p className="section-label">Tech Stack</p>
           <h2 className="section-heading">
-            A stack that spans interface polish, systems reliability, and intelligent products.
+            A stack built for backend systems, full-stack delivery, and AI-enabled products.
           </h2>
           <p className="section-copy">
-            The mix is intentional: frontend craft, backend rigor, cloud depth, and
-            modern AI integration without sacrificing maintainability.
+            The mix is intentional: backend rigor, cloud depth, and enough product
+            engineering range to ship complete experiences without leaning into pure frontend positioning.
           </p>
         </Reveal>
 
