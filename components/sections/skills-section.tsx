@@ -4,15 +4,6 @@ import { portfolio } from "@/data/portfolio";
 import { Reveal } from "@/components/ui/reveal";
 import { useState } from "react";
 
-const categoryColors: Record<string, string> = {
-  "Full-Stack": "text-sky-400",
-  "Backend": "text-emerald-400",
-  "Cloud / DevOps": "text-amber-400",
-  "Databases": "text-violet-400",
-  "AI / ML": "text-pink-400",
-  "Tools": "text-cyan-400"
-};
-
 const categoryComments: Record<string, string> = {
   "Full-Stack": "# UI layer + app architecture",
   "Backend": "# services, APIs, runtime",
@@ -40,16 +31,16 @@ export function SkillsSection() {
         </Reveal>
 
         <Reveal>
-          <div className="relative overflow-hidden rounded-[20px] border border-white/[0.08] bg-[rgb(13,17,28)] shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
+          <div className="surface-card relative overflow-hidden rounded-[20px]">
             {/* Animated border glow */}
             <div className="terminal-glow-border absolute -inset-px rounded-[20px] -z-10" />
 
             {/* Window bar */}
             <div className="flex items-center gap-2 border-b border-white/[0.06] px-4 py-3">
-              <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-              <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-              <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-              <span className="ml-3 flex-1 text-center text-[11px] tracking-wide text-white/30">
+              <span className="h-2.5 w-2.5 rounded-full bg-brand/60" />
+              <span className="h-2.5 w-2.5 rounded-full bg-accent/60" />
+              <span className="h-2.5 w-2.5 rounded-full bg-brand/30" />
+              <span className="ml-3 flex-1 text-center text-[11px] tracking-wide text-muted/50">
                 stack.yml — harshith/config
               </span>
             </div>
@@ -66,24 +57,24 @@ export function SkillsSection() {
                     <button
                       type="button"
                       onClick={() => setActiveGroup(isOpen ? null : gi)}
-                      className="flex w-full text-left transition-colors duration-200 hover:bg-white/[0.03] rounded"
+                      className="flex w-full text-left transition-colors duration-200 hover:bg-brand/[0.04] rounded"
                     >
-                      <span className="inline-block w-8 select-none text-right text-white/15">
+                      <span className="inline-block w-8 select-none text-right text-muted/30">
                         {lineBase}
                       </span>
                       <span className="ml-4 flex items-center gap-2">
-                        <span className="text-white/25 text-[10px] w-3">
+                        <span className="text-muted/40 text-[10px] w-3">
                           {isOpen ? "▾" : "▸"}
                         </span>
-                        <span className={categoryColors[group.title] || "text-sky-400"}>
+                        <span className="text-brand">
                           {group.title.toLowerCase().replace(/ \/ /g, "_").replace(/ /g, "_")}
                         </span>
-                        <span className="text-white/30">:</span>
-                        <span className="text-white/20 italic text-[12px]">
+                        <span className="text-muted/40">:</span>
+                        <span className="text-muted/30 italic text-[12px]">
                           {categoryComments[group.title]}
                         </span>
                         {!isOpen && (
-                          <span className="ml-2 rounded bg-white/[0.06] px-2 py-0.5 text-[10px] text-white/30">
+                          <span className="ml-2 rounded-full border border-brand/15 bg-brand/[0.06] px-2 py-0.5 text-[10px] text-brand/70">
                             {group.items.length}
                           </span>
                         )}
@@ -100,12 +91,12 @@ export function SkillsSection() {
                     >
                       {group.items.map((item, ii) => (
                         <div key={item} className="group flex">
-                          <span className="inline-block w-8 select-none text-right text-white/15">
+                          <span className="inline-block w-8 select-none text-right text-muted/30">
                             {lineBase + 1 + ii}
                           </span>
                           <span className="ml-4 pl-5">
-                            <span className="text-white/30">- </span>
-                            <span className="text-white/90 transition duration-200 group-hover:text-brand">
+                            <span className="text-accent/50">- </span>
+                            <span className="text-ink/85 transition duration-200 group-hover:text-brand">
                               {item}
                             </span>
                           </span>
@@ -119,8 +110,8 @@ export function SkillsSection() {
 
             {/* Status bar */}
             <div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-2 text-[11px]">
-              <span className="text-white/25">YAML · UTF-8</span>
-              <span className="text-white/25">
+              <span className="text-muted/40">YAML · UTF-8</span>
+              <span className="text-muted/40">
                 {portfolio.skillGroups.reduce((sum, g) => sum + g.items.length, 0)} technologies · {portfolio.skillGroups.length} categories
               </span>
             </div>
