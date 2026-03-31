@@ -481,6 +481,38 @@ html[data-theme="light"] {
   .stat-float-1 { animation: float-gentle 4s ease-in-out infinite; }
   .stat-float-2 { animation: float-gentle 5s ease-in-out 0.2s infinite; }
   .stat-float-3 { animation: float-gentle 4.5s ease-in-out 0.4s infinite; }
+
+  /* ───────────────────────────────────────────
+     Hero solar system orbit animations
+     ─────────────────────────────────────────── */
+
+  .hero-orbit-container {
+    isolation: isolate;
+  }
+
+  .hero-orbit-outer {
+    animation: orbit-pulse 6s ease-in-out infinite alternate;
+  }
+
+  .hero-orbit-inner {
+    animation: orbit-pulse 8s ease-in-out infinite alternate-reverse;
+  }
+
+  .hero-spin-slow {
+    animation: hero-orbit-spin 60s linear infinite;
+  }
+
+  .hero-spin-slow-reverse {
+    animation: hero-orbit-spin 60s linear infinite reverse;
+  }
+
+  .hero-spin-medium-reverse {
+    animation: hero-orbit-spin 40s linear infinite reverse;
+  }
+
+  .hero-spin-medium {
+    animation: hero-orbit-spin 40s linear infinite;
+  }
 }
 
 /* ───────────────────────────────────────────
@@ -566,6 +598,16 @@ html[data-theme="light"] {
 @keyframes card-float {
   0%, 100% { transform: translate(-50%, -50%) translateY(0) rotateX(0deg) rotateY(0deg); }
   50% { transform: translate(-50%, -50%) translateY(-10px) rotateX(2deg) rotateY(-2deg); }
+}
+
+@keyframes hero-orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-pulse {
+  from { opacity: 0.4; transform: translate(-50%, -50%) scale(0.98); }
+  to { opacity: 0.8; transform: translate(-50%, -50%) scale(1.02); }
 }
 
 /* ───────────────────────────────────────────

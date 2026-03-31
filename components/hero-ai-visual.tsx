@@ -1,120 +1,113 @@
-import { portfolio } from "@/data/portfolio";
-
-const highlights = [
-  { label: "Years building", value: "5+", icon: "⚡" },
-  { label: "Annual savings", value: "$2M", icon: "📈" },
-  { label: "Post-launch fallback", value: "<0.1%", icon: "🛡" }
+const orbitItems = [
+  { label: "Backend", angle: 0 },
+  { label: "Cloud", angle: 60 },
+  { label: "AI", angle: 120 },
+  { label: "Full-stack", angle: 180 },
+  { label: "Data", angle: 240 },
+  { label: "DevOps", angle: 300 }
 ];
 
-const capabilities = [
-  { name: "Backend platforms", desc: "High-scale services" },
-  { name: "Cloud-native systems", desc: "AWS, Docker, Terraform" },
-  { name: "AI product engineering", desc: "RAG, structured outputs" },
-  { name: "Full-stack delivery", desc: "APIs to shipped UIs" }
+const innerItems = [
+  { label: "Java", angle: 30 },
+  { label: "AWS", angle: 150 },
+  { label: "React", angle: 270 }
 ];
 
 export function HeroAiVisual() {
   return (
-    <div className="hero-enter hero-stagger-7 grid gap-3">
-      {/* Hero card — main visual with mesh background */}
-      <div className="relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6">
-        {/* Animated gradient mesh */}
-        <div className="hero-visual-grid absolute inset-0 opacity-40" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 20% 0%, rgb(var(--brand) / 0.2), transparent 50%), radial-gradient(ellipse at 90% 90%, rgb(var(--accent) / 0.15), transparent 45%)"
-          }}
-        />
-        <div className="shimmer-line absolute inset-x-0 top-0 h-px" />
+    <div className="hero-enter hero-stagger-7 relative flex items-center justify-center">
+      <div className="hero-orbit-container relative aspect-square w-full max-w-[520px]">
 
-        <div className="relative">
-          {/* Header */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" style={{ animation: "glow-pulse 2s ease-in-out infinite alternate" }} />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-              </span>
-              <span className="text-[11px] uppercase tracking-[0.24em] text-muted">
-                Building at Amazon
-              </span>
-            </div>
-            <span className="rounded-full border border-brand/25 bg-brand/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-brand">
-              2022 - Present
-            </span>
-          </div>
+        {/* Ambient glows */}
+        <div className="absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/20 blur-[80px]" style={{ animation: "glow-pulse 6s ease-in-out infinite alternate" }} />
+        <div className="absolute left-1/2 top-1/2 h-[40%] w-[40%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/15 blur-[60px]" style={{ animation: "glow-pulse 8s ease-in-out infinite alternate-reverse" }} />
 
-          {/* Capabilities grid */}
-          <div className="mt-6 grid grid-cols-2 gap-2.5">
-            {capabilities.map((cap, i) => (
+        {/* Outer orbit ring */}
+        <div className="hero-orbit-outer absolute left-1/2 top-1/2 h-[92%] w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.06]" />
+
+        {/* Inner orbit ring */}
+        <div className="hero-orbit-inner absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-brand/[0.12]" />
+
+        {/* Dashed middle ring */}
+        <div className="absolute left-1/2 top-1/2 h-[75%] w-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/[0.04]" />
+
+        {/* Outer orbit nodes — rotate the whole group */}
+        <div className="hero-spin-slow absolute inset-0">
+          {orbitItems.map((item) => (
+            <div
+              key={item.label}
+              className="absolute left-1/2 top-1/2"
+              style={{
+                transform: `rotate(${item.angle}deg) translateY(-46%) rotate(-${item.angle}deg)`,
+                transformOrigin: "0 0"
+              }}
+            >
               <div
-                key={cap.name}
-                className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] p-4 transition duration-300 hover:border-brand/20 hover:bg-white/[0.06]"
+                className="hero-spin-slow-reverse flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full border border-white/10 bg-panel/80 px-3 py-1.5 shadow-lg backdrop-blur-xl"
               >
-                <div
-                  className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
-                  style={{
-                    background: i % 2 === 0
-                      ? "radial-gradient(circle at 20% 80%, rgb(var(--brand) / 0.08), transparent 60%)"
-                      : "radial-gradient(circle at 80% 20%, rgb(var(--accent) / 0.08), transparent 60%)"
-                  }}
-                />
-                <p className="relative text-sm font-medium tracking-[-0.02em] text-ink">{cap.name}</p>
-                <p className="relative mt-1.5 text-[12px] text-muted">{cap.desc}</p>
+                <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                <span className="text-[11px] font-medium tracking-wide text-ink/90">{item.label}</span>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Inner orbit nodes — rotate opposite */}
+        <div className="hero-spin-medium-reverse absolute inset-0">
+          {innerItems.map((item) => (
+            <div
+              key={item.label}
+              className="absolute left-1/2 top-1/2"
+              style={{
+                transform: `rotate(${item.angle}deg) translateY(-29%) rotate(-${item.angle}deg)`,
+                transformOrigin: "0 0"
+              }}
+            >
+              <div
+                className="hero-spin-medium flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full border border-accent/20 bg-panel/70 px-2.5 py-1 shadow-md backdrop-blur-lg"
+              >
+                <span className="h-1 w-1 rounded-full bg-accent" />
+                <span className="text-[10px] font-medium text-ink/80">{item.label}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Floating particles */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white/40"
+            style={{
+              width: `${2 + (i % 3)}px`,
+              height: `${2 + (i % 3)}px`,
+              left: `${15 + i * 10}%`,
+              top: `${20 + (i % 4) * 18}%`,
+              animation: `float-gentle ${4 + (i % 3)}s ease-in-out ${i * 0.3}s infinite`,
+              boxShadow: "0 0 8px rgba(255,255,255,0.3)"
+            }}
+          />
+        ))}
+
+        {/* Center core */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          {/* Glow ring */}
+          <div className="absolute -inset-4 rounded-full border border-brand/20" style={{ animation: "glow-pulse 3s ease-in-out infinite alternate" }} />
+          <div className="absolute -inset-8 rounded-full border border-brand/10" />
+
+          {/* Core orb */}
+          <div className="relative grid h-24 w-24 place-items-center rounded-full border border-white/15 shadow-[0_0_60px_rgb(var(--brand)/0.3),0_0_120px_rgb(var(--accent)/0.15)]"
+            style={{
+              background: "radial-gradient(circle at 35% 35%, rgb(var(--brand) / 0.4), rgb(var(--accent) / 0.2) 60%, rgb(var(--panel) / 0.9))"
+            }}
+          >
+            <div className="text-center">
+              <p className="font-display text-2xl font-bold tracking-[-0.05em] text-ink">HP</p>
+              <p className="text-[8px] uppercase tracking-[0.3em] text-muted">SDE</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom row — stats */}
-      <div className="grid grid-cols-3 gap-3">
-        {highlights.map((item, i) => (
-          <div
-            key={item.label}
-            className={`relative overflow-hidden rounded-[22px] border p-5 transition duration-300 hover:scale-[1.02] ${
-              i === 0
-                ? "border-brand/20 bg-gradient-to-br from-brand/[0.12] via-white/[0.03] to-accent/[0.08]"
-                : "border-white/[0.06] bg-white/[0.03] hover:border-white/[0.12]"
-            }`}
-          >
-            {i === 0 && (
-              <div
-                className="absolute inset-0 opacity-60"
-                style={{
-                  background: "radial-gradient(circle at 30% 0%, rgb(var(--brand) / 0.15), transparent 50%)"
-                }}
-              />
-            )}
-            <div className="relative">
-              <div className="flex items-center justify-between">
-                <p className="text-[10px] uppercase tracking-[0.24em] text-muted">
-                  {item.label}
-                </p>
-                <span className="text-base">{item.icon}</span>
-              </div>
-              <p className="mt-3 font-display text-3xl font-semibold tracking-[-0.06em] text-ink">
-                {item.value}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Company bar */}
-      <div className="flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-3.5">
-        <p className="text-[10px] uppercase tracking-[0.24em] text-muted">Shipped at</p>
-        <div className="h-3 w-px bg-white/10" />
-        {["Amazon", "Flipkart", "UB"].map((co) => (
-          <span
-            key={co}
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium tracking-[-0.01em] text-ink/80"
-          >
-            {co}
-          </span>
-        ))}
       </div>
     </div>
   );
