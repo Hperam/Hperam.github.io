@@ -88,7 +88,7 @@ export const portfolio = {
         { label: "Open Live Demo", href: "/commerce-copilot/", target: "_blank" },
         {
           label: "View Source",
-          href: "https://github.com/Hperam/Hperam.github.io/tree/main/commerce-copilot"
+          href: "https://github.com/Hperam/incident-copilot-api"
         }
       ]
     },
@@ -102,9 +102,7 @@ export const portfolio = {
       role: "Platform product thinking, observability-first AI systems",
       result:
         "Signals backend depth, operational empathy, and strong judgment around modern AI systems.",
-      links: [
-        { label: "View Source", href: "https://github.com/Hperam/incident-copilot-api" }
-      ]
+      links: []
     }
   ],
   experience: [
