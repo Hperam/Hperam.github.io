@@ -35,28 +35,6 @@ export const portfolio = {
     "Cloud architecture",
     "Production reliability"
   ],
-  about:
-    "Five years building systems under real pressure — demand simulation at Amazon, full-stack commerce at Flipkart, and AI-assisted tooling in between. I default to backend rigor but take full ownership end-to-end when the product needs it.",
-  aboutPoints: [
-    {
-      tag: "Amazon · 2022 – present",
-      text: "Built simulation infrastructure for large-scale fulfillment planning that directly contributed to $2M in annual savings and sub-0.1% post-launch fallback rate.",
-    },
-    {
-      tag: "Flipkart · 2019 – 2021",
-      text: "Owned the full product loop — React interfaces, backend services, auth flows, checkout, and AWS cloud deployment across live commerce systems.",
-    },
-    {
-      tag: "Now · AI tooling",
-      text: "Applying production experience to AI-assisted workflows: grounded retrieval, structured outputs, and agentic systems built for reliability.",
-    },
-  ],
-  strengths: [
-    { label: "Distributed Systems", tags: ["Kafka", "ECS", "Lambda", "Spark"] },
-    { label: "Data Platforms", tags: ["Airflow", "Redshift", "Athena", "DynamoDB"] },
-    { label: "Product Engineering", tags: ["React", "Next.js", "Node.js", "APIs"] },
-    { label: "AI & Intelligent Systems", tags: ["RAG", "OpenAI", "FastAPI", "Evals"] },
-  ],
   metrics: [
     { label: "Production systems", detail: "Platform, simulation, and operational tooling" },
     { label: "Full-stack ownership", detail: "Commerce flows, APIs, auth, and shipped user experiences" },
