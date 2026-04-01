@@ -33,7 +33,7 @@ export function AboutSection() {
 
         {/* Header */}
         <Reveal className="max-w-2xl">
-          <p className="section-label">About</p>
+          <p className="section-label">Values</p>
           <h2 className="section-heading">
             How I think about engineering.
           </h2>
