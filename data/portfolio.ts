@@ -13,7 +13,7 @@ export const portfolio = {
   ],
   nav: [
     { id: "hero", label: "Home" },
-    { id: "about", label: "About" },
+    { id: "about", label: "Values" },
     { id: "skills", label: "Stack" },
     { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
