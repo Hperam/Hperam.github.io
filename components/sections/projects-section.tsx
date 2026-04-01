@@ -62,7 +62,7 @@ export function ProjectsSection() {
                 </div>
                 <div className="flex flex-wrap gap-4">
                   {portfolio.projects[0].links.map((link) => (
-                    <MagneticButton key={link.label} href={link.href}>
+                    <MagneticButton key={link.label} href={link.href} target={"target" in link ? (link as {target?: string}).target : undefined}>
                       {link.label}
                     </MagneticButton>
                   ))}
@@ -96,6 +96,15 @@ export function ProjectsSection() {
                       </span>
                     ))}
                   </div>
+                  {project.links.length > 0 && (
+                    <div className="mt-5 flex flex-wrap gap-3">
+                      {project.links.map((link) => (
+                        <MagneticButton key={link.label} href={link.href} variant="secondary" target={"target" in link ? (link as {target?: string}).target : undefined}>
+                          {link.label}
+                        </MagneticButton>
+                      ))}
+                    </div>
+                  )}
                 </TiltCard>
               </Reveal>
             ))}

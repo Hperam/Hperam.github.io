@@ -10,6 +10,7 @@ type MagneticButtonProps = {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   onClick?: () => void;
+  target?: string;
 };
 
 export function MagneticButton({
@@ -17,11 +18,13 @@ export function MagneticButton({
   href,
   variant = "primary",
   className,
-  onClick
+  onClick,
+  target
 }: MagneticButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null);
   const isExternal =
     href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:");
+  const resolvedTarget = target ?? (isExternal ? "_blank" : undefined);
 
   const handleMove = (event: React.MouseEvent<HTMLAnchorElement>) => {
     const node = ref.current;
@@ -43,8 +46,8 @@ export function MagneticButton({
     <a
       ref={ref}
       href={href}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noreferrer" : undefined}
+      target={resolvedTarget}
+      rel={resolvedTarget === "_blank" ? "noreferrer" : undefined}
       onClick={onClick}
       onMouseMove={handleMove}
       onMouseLeave={reset}

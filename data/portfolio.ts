@@ -85,8 +85,7 @@ export const portfolio = {
       result:
         "Demonstrates end-to-end product engineering, secure session-scoped API usage, grounded recommendation design, and strong UI judgment inside a static-hosted environment.",
       links: [
-        { label: "Open Live Demo", href: "/commerce-copilot/" },
-        { label: "View Architecture", href: "/commerce-copilot/public/index.html#architecture" },
+        { label: "Open Live Demo", href: "/commerce-copilot/", target: "_blank" },
         {
           label: "View Source",
           href: "https://github.com/Hperam/Hperam.github.io/tree/main/commerce-copilot"
@@ -103,7 +102,9 @@ export const portfolio = {
       role: "Platform product thinking, observability-first AI systems",
       result:
         "Signals backend depth, operational empathy, and strong judgment around modern AI systems.",
-      links: []
+      links: [
+        { label: "View Source", href: "https://github.com/Hperam/incident-copilot-api" }
+      ]
     }
   ],
   experience: [
