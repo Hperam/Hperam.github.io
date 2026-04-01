@@ -60,7 +60,7 @@ export function HeroSection() {
       </div>
 
       {/* Full-width tech marquee */}
-      <div className="hero-enter hero-stagger-6 mt-10">
+      <div className="hero-enter hero-stagger-6 mt-5">
         <div className="marquee-shell">
           <div className="marquee-track">
             {[...allTech, ...allTech].map((item, index) => (
