@@ -86,16 +86,18 @@ export const portfolio = {
       ]
     },
     {
-      title: "Runbook Agent",
-      status: "High-leverage concept",
-      impact: "Agentic triage grounded in logs, metrics, traces, and operational context",
+      title: "Search-as-a-Service",
+      status: "Open source",
+      impact: "Inverted index with TF-IDF ranking, pluggable storage, and JMH benchmarks",
       summary:
-        "An incident response copilot for cloud services that retrieves telemetry and runbook context, generates grounded next steps, and keeps a human in the loop.",
-      tech: ["OpenAI", "CloudWatch", "FastAPI", "Telemetry", "RAG", "Guardrails"],
-      role: "Platform product thinking, observability-first AI systems",
+        "A production-grade full-text search engine built in Java from first principles. Inverted index with TF-IDF scoring, pluggable storage (in-memory or PostgreSQL), REST API, Testcontainers integration tests, and JMH benchmarks measured at 10k and 100k document corpus sizes.",
+      tech: ["Java 21", "Spring Boot", "PostgreSQL", "Flyway", "Testcontainers", "JMH", "Docker"],
+      role: "Full system design — core algorithm, storage abstraction, REST API, test strategy, benchmarking",
       result:
-        "Signals backend depth, operational empathy, and strong judgment around modern AI systems.",
-      links: []
+        "Demonstrates algorithmic depth (inverted index, TF-IDF), systems thinking (pluggable storage, thread safety), and production habits (Flyway migrations, Testcontainers, JMH benchmarks).",
+      links: [
+        { label: "View Source", href: "https://github.com/Hperam/search-service" }
+      ]
     }
   ],
   experience: [
