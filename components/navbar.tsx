@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { portfolio } from "@/data/portfolio";
-import { MagneticButton } from "@/components/ui/magnetic-button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function Navbar() {
@@ -47,47 +46,55 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-3">
-      <div
-        className={clsx(
-          "mx-auto flex max-w-[1240px] items-center justify-between rounded-full px-5 py-2.5 transition-all duration-300",
-          scrolled
-            ? "border border-white/10 bg-panel/85 shadow-panel backdrop-blur-2xl"
-            : "border border-transparent bg-transparent"
-        )}
-      >
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand/20 text-[11px] font-bold text-brand ring-1 ring-brand/30 transition group-hover:bg-brand/30">
-            HP
-          </span>
-          <span className="hidden text-[0.9rem] font-semibold tracking-[-0.03em] text-ink transition group-hover:text-brand sm:block">
-            {portfolio.name.split(" ")[0]}
-            <span className="font-normal text-muted"> {portfolio.name.split(" ").slice(1).join(" ")}</span>
-          </span>
+    <header
+      className={clsx(
+        "sticky top-0 z-50 transition-all duration-300",
+        scrolled
+          ? "border-b border-white/[0.07] bg-panel/80 backdrop-blur-2xl"
+          : "bg-transparent"
+      )}
+    >
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-4">
+
+        {/* Logo — text mark only */}
+        <a
+          href="#hero"
+          className="text-[0.95rem] font-semibold tracking-[-0.03em] text-ink transition-colors duration-200 hover:text-brand"
+        >
+          {portfolio.name.split(" ").slice(0, 2).join(" ")}
+          <span className="text-brand">.</span>
         </a>
 
         {/* Center nav */}
-        <nav className="hidden items-center gap-0.5 rounded-full border border-white/8 bg-white/[0.04] px-1.5 py-1.5 backdrop-blur-sm lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {portfolio.nav.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               className={clsx(
-                "relative rounded-full px-4 py-1.5 text-[13px] font-medium transition-all duration-200",
+                "relative text-[13px] font-medium transition-colors duration-200",
                 active === item.id
-                  ? "bg-brand/15 text-brand shadow-[0_0_12px_rgb(var(--brand)/0.2)]"
-                  : "text-muted hover:bg-white/6 hover:text-ink"
+                  ? "text-ink"
+                  : "text-muted hover:text-ink"
               )}
             >
               {item.label}
+              {active === item.id && (
+                <span className="absolute -bottom-0.5 left-0 right-0 h-[1.5px] rounded-full bg-brand" />
+              )}
             </a>
           ))}
         </nav>
 
         {/* Right */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <ThemeToggle />
+          <a
+            href="#contact"
+            className="hidden rounded-full border border-brand/40 bg-brand/10 px-4 py-1.5 text-[13px] font-medium text-brand transition-colors duration-200 hover:bg-brand/20 md:block"
+          >
+            Get in touch
+          </a>
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
@@ -97,37 +104,41 @@ export function Navbar() {
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
-          <MagneticButton href="#contact" className="hidden text-[13px] !min-h-[36px] !px-4 !py-1.5 md:inline-flex">
-            Get in touch
-          </MagneticButton>
         </div>
       </div>
 
       {/* Mobile menu */}
       <div
         className={clsx(
-          "mx-auto mt-2 max-w-[1240px] overflow-hidden rounded-[24px] border bg-panel/95 shadow-panel backdrop-blur-2xl transition-all duration-300 lg:hidden",
+          "overflow-hidden border-white/[0.07] bg-panel/95 backdrop-blur-2xl transition-all duration-300 lg:hidden",
           mobileOpen
-            ? "pointer-events-auto max-h-[400px] border-white/10 opacity-100"
-            : "pointer-events-none max-h-0 border-transparent opacity-0"
+            ? "pointer-events-auto max-h-[400px] border-b opacity-100"
+            : "pointer-events-none max-h-0 opacity-0"
         )}
       >
-        <nav className="grid gap-1 p-3">
+        <nav className="grid gap-1 px-6 py-4">
           {portfolio.nav.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={() => setMobileOpen(false)}
               className={clsx(
-                "rounded-xl px-4 py-2.5 text-sm font-medium transition",
+                "rounded-lg px-3 py-2.5 text-sm font-medium transition",
                 active === item.id
-                  ? "bg-brand/12 text-brand"
-                  : "text-muted hover:bg-white/5 hover:text-ink"
+                  ? "text-brand"
+                  : "text-muted hover:text-ink"
               )}
             >
               {item.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setMobileOpen(false)}
+            className="mt-2 rounded-full border border-brand/40 bg-brand/10 px-4 py-2 text-center text-sm font-medium text-brand"
+          >
+            Get in touch
+          </a>
         </nav>
       </div>
     </header>
