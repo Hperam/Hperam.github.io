@@ -126,7 +126,9 @@ html[data-theme="light"] {
 
   /* --- Project cards --- */
   .project-spotlight {
-    @apply relative overflow-hidden rounded-[34px] border border-white/10 bg-panel/70 p-8 shadow-panel;
+    @apply relative rounded-[34px] border border-white/10 bg-panel/70 p-8 shadow-panel;
+    overflow: hidden;
+    clip-path: inset(0 round 34px);
   }
 
   .project-glow {
@@ -138,7 +140,9 @@ html[data-theme="light"] {
   }
 
   .project-card {
-    @apply relative overflow-hidden rounded-[34px] border border-white/10 bg-white/5 p-7 shadow-panel;
+    @apply relative rounded-[34px] border border-white/10 bg-white/5 p-7 shadow-panel;
+    overflow: hidden;
+    clip-path: inset(0 round 34px);
   }
 
   .project-stat {
