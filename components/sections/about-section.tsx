@@ -64,12 +64,6 @@ export function AboutSection() {
                   </p>
                 </div>
 
-                {/* Arrow indicator */}
-                <div className="mt-3 shrink-0 pr-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="text-brand">
-                    <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
               </div>
             </Reveal>
           ))}
