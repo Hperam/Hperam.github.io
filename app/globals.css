@@ -166,6 +166,24 @@ html[data-theme="light"] {
     @apply text-slate-900;
   }
 
+  /* --- Project carousel track --- */
+  .projects-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+  }
+  .projects-track::-webkit-scrollbar {
+    display: none;
+  }
+  .projects-track-card {
+    width: 220px;
+  }
+  @media (min-width: 640px) {
+    .projects-track-card {
+      width: 240px;
+    }
+  }
+
   /* --- Timeline --- */
   .timeline-card {
     @apply relative overflow-hidden rounded-[30px] border border-white/10 bg-white/5 p-7 shadow-panel;
