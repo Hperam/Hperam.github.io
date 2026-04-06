@@ -82,8 +82,6 @@ html[data-theme="light"] {
 
   .surface-card::before,
   .skill-card::before,
-  .project-card::before,
-  .project-spotlight::before,
   .timeline-card::before {
     content: "";
     position: absolute;
