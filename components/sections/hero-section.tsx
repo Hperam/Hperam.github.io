@@ -18,7 +18,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className="relative overflow-hidden px-4 pb-4 pt-24">
+    <section id="hero" className="relative overflow-hidden px-4 pb-24 pt-24">
       <div className="mx-auto grid max-w-[1240px] gap-8 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Left — name, title, intro */}
         <div className="min-w-0 space-y-6">
@@ -60,7 +60,7 @@ export function HeroSection() {
       </div>
 
       {/* Full-width tech marquee */}
-      <div className="hero-enter hero-stagger-6 mt-5">
+      <div className="hero-enter hero-stagger-6 mt-10">
         <div className="marquee-shell">
           <div className="marquee-track">
             {[...allTech, ...allTech].map((item, index) => (
