@@ -2,14 +2,14 @@ export const portfolio = {
   name: "Harshith Sai Peram",
   title: "Software Engineer focused on backend, full-stack, and intelligent systems",
   location: "Seattle, WA",
-  email: "harshith18sai@gmail.com",
+  email: "harshithsaiii98@gmail.com",
   socials: [
     { label: "GitHub", href: "https://github.com/Hperam" },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/harshith-sai-peram-aa3b73138/"
     },
-    { label: "Email", href: "mailto:harshith18sai@gmail.com" }
+    { label: "Email", href: "mailto:harshithsaiii98@gmail.com" }
   ],
   nav: [
     { id: "hero", label: "Home" },
